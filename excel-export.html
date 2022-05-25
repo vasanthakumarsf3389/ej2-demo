@@ -18,6 +18,13 @@
 
 <script >
 
+    var degree = [90, 180, 45, 135, 225];
+    var dropDownListObject = new ej2_dropdowns_1.DropDownList({
+        dataSource: degree,
+        placeholder: "Select a degree"
+    });
+    dropDownListObject.appendTo('#ddlelement');
+    
     for (var i = 0; i < data.length; i++) {
         data[i]["List"] = i+1;
     }
