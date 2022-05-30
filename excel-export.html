@@ -83,13 +83,13 @@ grid.toolbarClick = function (args) {
             args.style = { verticalAlignment: 'Middle' };
         }
     };
-    function setHeaderHeight(args) {
-        var textWidth = document.querySelector(".orientationcss > div").scrollWidth;
-        var headerCell = document.querySelectorAll(".e-headercell");
-        for (var i = 0; i < headerCell.length; i++) {
-            headerCell.item(i).style.height = textWidth - 200 + 'px';
-        }
-    }
+//     function setHeaderHeight(args) {
+//         var textWidth = document.querySelector(".orientationcss > div").scrollWidth;
+//         var headerCell = document.querySelectorAll(".e-headercell");
+//         for (var i = 0; i < headerCell.length; i++) {
+//             headerCell.item(i).style.height = textWidth - 200 + 'px';
+//         }
+//     }
     grid.excelHeaderQueryCellInfo = function (args) {
         debugger;
         var textWidth = document.querySelector(".orientationcss > div").scrollWidth;
