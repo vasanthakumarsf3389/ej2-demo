@@ -36,7 +36,7 @@
     dataSource: data,
     allowPdfExport: true,
     allowExcelExport: true,
-    toolbar: ['PdfExport', 'ExcelExport'],
+    toolbar: ['ExcelExport'],
     columns: [
         
         { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120, type: 'number' },
@@ -51,9 +51,9 @@
 grid.appendTo('#Grid');
 
 grid.toolbarClick = function (args) {
-        if (args['item'].id === 'Grid_pdfexport') {
-            grid.pdfExport();
-        }
+//         if (args['item'].id === 'Grid_pdfexport') {
+//             grid.pdfExport();
+//         }
         else if (args['item'].id === 'Grid_excelexport') {
             grid.excelExport();
         }
