@@ -54,7 +54,7 @@ grid.toolbarClick = function (args) {
 //         if (args['item'].id === 'Grid_pdfexport') {
 //             grid.pdfExport();
 //         }
-        else if (args['item'].id === 'Grid_excelexport') {
+        if (args['item'].id === 'Grid_excelexport') {
             grid.excelExport();
         }
     };
