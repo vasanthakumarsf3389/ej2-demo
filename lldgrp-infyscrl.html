@@ -24,17 +24,17 @@
     </div>
         <div id="Grid"></div>        
 <script>
-  var dataManger = new ej2_data_1.DataManager({
+  var dataManger = new ej.data.DataManager({
         url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
-        adaptor: new ej2_data_1.ODataAdaptor,
+        adaptor: new ej.data.ODataAdaptor,
         crossDomain: true
     });
-    var dataManger2 = new ej2_data_1.DataManager({
+    var dataManger2 = new ej.data.DataManager({
         url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Customers',
-        adaptor: new ej2_data_1.ODataAdaptor,
+        adaptor: new ej.data.ODataAdaptor,
         crossDomain: true
     });
-    ej2_base_1.L10n.load({
+    ej.base.L10n.load({
         'de-DE': {
             'grid': {
                 'EmptyRecord': 'Keine Aufzeichnungen angezeigt',
@@ -46,10 +46,10 @@
             },
         }
     });
-    datasource_1.createLazyLoadData();
+    datasource.createLazyLoadData();
     var autoComplete;
-    var grid = new ej2.grids.Grid({
-        dataSource: datasource_2.lazyLoadData,
+    var grid = new ej.grids.Grid({
+        dataSource: datasource.lazyLoadData,
         enableInfiniteScrolling: true,
         height: 410,
         allowGrouping: true,
@@ -71,9 +71,9 @@
         ],
     });
     grid.appendTo('#Grid');
-    var checkBoxObj = new ej2_buttons_1.CheckBox({ label: 'Enable RTL', change: onRtlChange });
+    var checkBoxObj = new ej.buttons.CheckBox({ label: 'Enable RTL', change: onRtlChange });
     checkBoxObj.appendTo('#rtlmode');
-    var checkBoxObj = new ej2_buttons_1.CheckBox({ label: 'Enable Bigger', change: onBiggerChange });
+    var checkBoxObj = new ej.buttons.CheckBox({ label: 'Enable Bigger', change: onBiggerChange });
     checkBoxObj.appendTo('#biggermode');
     function onRtlChange(e) {
         grid.enableRtl = e.checked;
