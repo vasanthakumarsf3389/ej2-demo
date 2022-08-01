@@ -1,1 +1,82 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>EJ2 Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Typescript Grid Control">
+    <meta name="author" content="Syncfusion">
+    <link href="index.css" rel="stylesheet">
+    <script src="//ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+    <script src="ej2.min.js"></script>
+    <script src="data.js" type="text/javascript"></script> 
+</head>
+<body>
+        
+        <input type="text" tabindex="1" id='ddlelement' />
+        <br>
+        <div id="Grid"></div>        
 
+<script>
+  var dataManger = new ej2_data_1.DataManager({
+        url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+        adaptor: new ej2_data_1.ODataAdaptor,
+        crossDomain: true
+    });
+    var dataManger2 = new ej2_data_1.DataManager({
+        url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Customers',
+        adaptor: new ej2_data_1.ODataAdaptor,
+        crossDomain: true
+    });
+    ej2_base_1.L10n.load({
+        'de-DE': {
+            'grid': {
+                'EmptyRecord': 'Keine Aufzeichnungen angezeigt',
+                'GroupDropArea': 'Ziehen Sie einen Spaltenkopf hier, um die Gruppe ihre Spalte',
+                'UnGroup': 'Klicken Sie hier, um die Gruppierung aufheben',
+                'EmptyDataSourceError': 'DataSource darf bei der Erstauslastung nicht leer sein, da Spalten aus der dataSource im AutoGenerate Spaltenraster',
+                'Item': 'Artikel',
+                'Items': 'Artikel'
+            },
+        }
+    });
+    datasource_1.createLazyLoadData();
+    var autoComplete;
+    var grid = new grid_1.Grid({
+        dataSource: datasource_2.lazyLoadData,
+        enableInfiniteScrolling: true,
+        height: 410,
+        allowGrouping: true,
+        allowFiltering: true,
+        allowSorting: true,
+        filterSettings: { type: 'CheckBox' },
+        editSettings: { allowAdding: true, allowDeleting: true, allowEditing: true, newRowPosition: 'Top' },
+        toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search'],
+        actionFailure: function (args) {
+            debugger;
+        },
+        groupSettings: { enableLazyLoading: true, columns: ['ProductName', 'CustomerName'] },
+        columns: [
+            { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120, isPrimaryKey: true, },
+            { field: 'ProductName', headerText: 'Product Name', width: 160 },
+            { field: 'ProductID', headerText: 'Product ID', textAlign: 'Right', width: 120 },
+            { field: 'CustomerID', headerText: 'Customer ID', width: 120 },
+            { field: 'CustomerName', headerText: 'Customer Name', width: 160 },
+        ],
+    });
+    grid.appendTo('#Grid');
+    var checkBoxObj = new ej2_buttons_1.CheckBox({ label: 'Enable RTL', change: onRtlChange });
+    checkBoxObj.appendTo('#rtlmode');
+    var checkBoxObj = new ej2_buttons_1.CheckBox({ label: 'Enable Bigger', change: onBiggerChange });
+    checkBoxObj.appendTo('#biggermode');
+    function onRtlChange(e) {
+        grid.enableRtl = e.checked;
+    }
+    function onBiggerChange(e) {
+        e.checked ? document.body.classList.add('e-bigger') : document.body.classList.remove('e-bigger');
+    }
+});
+</script>
+</body>
