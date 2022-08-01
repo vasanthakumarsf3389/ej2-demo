@@ -46,10 +46,10 @@
             },
         }
     });
-    datasource.createLazyLoadData();
+    createLazyLoadData();
     var autoComplete;
     var grid = new ej.grids.Grid({
-        dataSource: datasource.lazyLoadData,
+        dataSource: lazyLoadData,
         enableInfiniteScrolling: true,
         height: 410,
         allowGrouping: true,
