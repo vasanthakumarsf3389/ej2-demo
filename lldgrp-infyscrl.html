@@ -31,7 +31,19 @@
   var scrollTypes = ["Infinite Scroll", "Virtual Scroll"];
   var dropDownListObject = new ej.dropdowns.DropDownList({
       dataSource: scrollTypes,
-      placeholder: "Select a Scroll Type"
+      placeholder: "Select a Scroll Type",
+      change: () => {
+          if (dropDownListObject.value === "Infinite Scroll") {
+              grid.refresh();
+              grid.enableInfiniteScrolling = true;
+              grid.enableVirtualization = false;
+          }
+          else if (dropDownListObject.value === "Virtual Scroll") {
+              grid.refresh();
+              grid.enableVirtualization = true;
+              grid.enableInfiniteScrolling = false;
+          }
+      }
   });
   dropDownListObject.appendTo('#ddlelement');
   
