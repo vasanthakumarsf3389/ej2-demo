@@ -34,14 +34,14 @@
       placeholder: "Select a Scroll Type",
       change: () => {
           if (dropDownListObject.value === "Infinite Scroll") {
-              grid.refresh();
               grid.enableInfiniteScrolling = true;
               grid.enableVirtualization = false;
+              grid.refresh();
           }
           else if (dropDownListObject.value === "Virtual Scroll") {
-              grid.refresh();
               grid.enableVirtualization = true;
               grid.enableInfiniteScrolling = false;
+              grid.refresh();
           }
       }
   });
