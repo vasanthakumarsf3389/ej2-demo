@@ -22,15 +22,16 @@
             <input id="biggermode" type="checkbox" />
         </div>
     </div>
-    <div id='ddlelement'></div>
+    <input type='text' tabindex="1" id='ddlelement'/>
+    <br/>
     <button id='genarate' class="e-info"> Load 100K Data</button>
         <div id="Grid"></div>        
 <script>
   
-  var degree = [90, 180, 45, 135, 225, -90];
+  var scrollTypes = ["Infinite Scroll", "Virtual Scroll"];
   var dropDownListObject = new ej.dropdowns.DropDownList({
-      dataSource: degree,
-      placeholder: "Select a degree"
+      dataSource: scrollTypes,
+      placeholder: "Select a Sroll Type"
   });
   dropDownListObject.appendTo('#ddlelement');
   
