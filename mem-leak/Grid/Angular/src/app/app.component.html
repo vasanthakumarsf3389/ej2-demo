@@ -1,0 +1,15 @@
+<span id="performanceTime">Initial Load Time Taken: 0 ms</span>
+
+<span id="performanceTime1"> Grid Action Taken Time : 0 ms</span>
+<ejs-grid #grid [dataSource]='data' [enableVirtualization]='true' height='400' [allowSorting]='true' 
+    [allowGrouping]='true' [pageSettings]='initialPage' [toolbar]='toolbar' [allowFiltering]='true'
+    (created)='created($event)' (dataBound)='dataBound($event)' (actionBegin)='actionBegin($event)'
+    (actionComplete)='actionComplete($event)' showColumnChooser='true' *ngIf="flag">
+    <e-columns>
+        <e-column field='OrderID' headerText='Order ID' textAlign='Right' width='120'></e-column>
+        <e-column field='ProductName' headerText='Product Name' width='100'></e-column>
+        <e-column field='ProductID' headerText='Product ID' textAlign='Right' width='120'></e-column>
+        <e-column field='CustomerID' headerText='Customer ID' width='120'></e-column>
+        <e-column field='CustomerName' headerText='Customer Name' width='120'></e-column>
+    </e-columns>
+</ejs-grid>
