@@ -43,7 +43,8 @@
         var grid = new ej.grids.Grid({
             // dataSource: localData.slice(2, -1),
             dataSource: odata,
-            allowPaging: true,
+            query:  new ej.data.Query().skip(2),
+            // allowPaging: true,
             allowFiltering: true,
             filterSettings: { type: 'FilterBar' },
             toolbar: ['ColumnChooser'],
@@ -55,6 +56,7 @@
                 { field: 'Freight', width: 110, format: 'C2', headerText: 'Freight' },
                 { field: 'ShipCountry', width: 130, headerText: 'Ship Country' },
                 { field: 'ShipRegion', width: 130, headerText: 'Ship Region' }
+                // { field: 'ShipPostalCode', width: 130, headerText: 'ShipPostalCode' }
             ]
         });
         grid.appendTo('#Grid');
