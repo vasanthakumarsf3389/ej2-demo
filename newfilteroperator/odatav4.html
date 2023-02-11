@@ -19,19 +19,28 @@
 </head>
 <body onload="load()">
     <div>
-        <div>Filter Type</div>
+        <h3>Filter Type</h3>
         <input type="text" tabindex="1" id='filterType' />
         <div id="Grid">
         </div>
     </div>
     <script>
         var localData = window.data;
+        var fLocalData = window.customerData;
         var odatav4 = new ej.data.DataManager({
             url: 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders/',
             adaptor: new ej.data.ODataV4Adaptor()
         });
+        var fOdatav4 = new ej.data.DataManager({
+            url: 'https://services.odata.org/V4/Northwind/Northwind.svc/Customers/',
+            adaptor: new ej.data.ODataV4Adaptor()
+        });
         var odata = new ej.data.DataManager({
             url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+            adaptor: new ej.data.ODataAdaptor()
+        });
+        var fOdata = new ej.data.DataManager({
+            url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Customers',
             adaptor: new ej.data.ODataAdaptor()
         });
         var filtertype = [
@@ -51,7 +60,15 @@
             showColumnChooser: true,
             columns: [
                 { field: 'OrderID', width: 100, headerText: 'Order ID' },
-                { field: 'CustomerID', width: 120, headerText: 'Customer ID' },
+                // { field: 'CustomerID', width: 120, headerText: 'Customer ID' },
+                {
+                    field: 'CustomerID',
+                    width: 120,
+                    headerText: 'Contact Name',
+                    foreignKeyField: 'CustomerID',
+                    foreignKeyValue: 'ContactName',
+                    dataSource: fOdatav4
+                },
                 // { field: 'OrderDate', headerText: 'Order Date', width: 130, format: 'yMd' },
                 { field: 'ShippedDate', headerText: 'Shipped Date', width: 130, format: 'yMd' },
                 { field: 'Freight', width: 110, format: 'C2', headerText: 'Freight' },
