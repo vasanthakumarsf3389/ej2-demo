@@ -1099,7 +1099,7 @@ var stringData = JSON.stringify([
         'ShipCountry': 'France'
     },
     {
-        'OrderID': null,
+        'OrderID': 10252,
         'CustomerID': 'SUPRD',
         'OrderDate': '1996-07-09T00:00:00.000Z',
         'ShippedDate': '1996-07-11T00:00:00.000Z',
@@ -1171,7 +1171,7 @@ var stringData = JSON.stringify([
         'ShipCountry': 'Venezuela'
     },
     {
-        'OrderID': null,
+        'OrderID': 10258,
         'CustomerID': 'ERNSH',
         'OrderDate': '1996-07-17T00:00:00.000Z',
         'ShippedDate': '1996-07-23T00:00:00.000Z',
