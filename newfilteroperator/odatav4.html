@@ -11,8 +11,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
     <script src="../ej2.min.js"></script>
+    <script>
+        function load() {
+            document.body.lastElementChild.remove();
+        }
+    </script>
 </head>
-<body>
+<body onload="load()">
     <div>
         <div>Filter Type</div>
         <input type="text" tabindex="1" id='filterType' />
@@ -41,7 +46,7 @@
             allowPaging: true,
             allowFiltering: true,
             filterSettings: { type: 'FilterBar' },
-            toolbar: ['Search', 'ColumnChooser'],
+            toolbar: ['ColumnChooser'],
             showColumnChooser: true,
             columns: [
                 { field: 'OrderID', width: 100, headerText: 'Order ID' },
