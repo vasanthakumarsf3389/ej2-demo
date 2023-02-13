@@ -1060,7 +1060,7 @@ var stringData = JSON.stringify([
         'ShipAddress': '59 rue de l\'Abbaye',
         'ShipCity': 'Reims',
         'ShipRegion': '',
-        'ShipCountry': 'France'
+        'ShipCountry': 'France%'
     },
     {
         'OrderID': 10249,
@@ -1072,7 +1072,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Luisenstr. 48',
         'ShipCity': 'MÃ¼nster',
         'ShipRegion': '',
-        'ShipCountry': 'Germany'
+        'ShipCountry': '%Germany'
     },
     {
         'OrderID': 10250,
@@ -1084,7 +1084,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Rua do PaÃ§o, 67',
         'ShipCity': 'Rio de Janeiro',
         'ShipRegion': 'RJ',
-        'ShipCountry': 'Brazil'
+        'ShipCountry': 'Bra%zil'
     },
     {
         'OrderID': 10251,
@@ -1096,7 +1096,7 @@ var stringData = JSON.stringify([
         'ShipAddress': '2, rue du Commerce',
         'ShipCity': 'Lyon',
         'ShipRegion': '',
-        'ShipCountry': 'France'
+        'ShipCountry': 'France%'
     },
     {
         'OrderID': 10252,
@@ -1108,7 +1108,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Boulevard Tirou, 255',
         'ShipCity': 'Charleroi',
         'ShipRegion': '',
-        'ShipCountry': 'Belgium'
+        'ShipCountry': 'Be%lgium'
     },
     {
         'OrderID': 10253,
@@ -1132,7 +1132,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Hauptstr. 31',
         'ShipCity': 'Bern',
         'ShipRegion': '',
-        'ShipCountry': 'Switzerland'
+        'ShipCountry': 'Switzerland%%'
     },
     {
         'OrderID': 10255,
@@ -1168,7 +1168,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Carrera 22 con Ave. Carlos Soublette #8-35',
         'ShipCity': 'San CristÃ³bal',
         'ShipRegion': 'TÃ¡chira',
-        'ShipCountry': 'Venezuela'
+        'ShipCountry': '%%Venezuela'
     },
     {
         'OrderID': 10258,
@@ -1180,7 +1180,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Kirchgasse 6',
         'ShipCity': 'Graz',
         'ShipRegion': '',
-        'ShipCountry': 'Austria'
+        'ShipCountry': 'Aus%%tria'
     },
     {
         'OrderID': 10259,
@@ -1192,7 +1192,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Sierras de Granada 9993',
         'ShipCity': 'MÃ©xico D.F.',
         'ShipRegion': '',
-        'ShipCountry': 'Mexico'
+        'ShipCountry': 'Me%x%ico'
     },
     {
         'OrderID': 10260,
@@ -1204,7 +1204,7 @@ var stringData = JSON.stringify([
         'ShipAddress': 'Mehrheimerstr. 369',
         'ShipCity': 'KÃ¶ln',
         'ShipRegion': '',
-        'ShipCountry': 'Germany'
+        'ShipCountry': '%Germany'
     },
     {
         'OrderID': 10261,
