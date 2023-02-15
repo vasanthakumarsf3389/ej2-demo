@@ -20,12 +20,64 @@
 </head>
 <body onload="load()">
     <div>
-        <h3>Filter Type</h3>
+        <h3 style="display: inline-block;">Locale Type: </h3>
+        <input type="text" tabindex="1" id="localeType">
+        <h3 style="display: inline-block;">Filter Type: </h3>
         <input type="text" tabindex="1" id='filterType' />
         <div id="Grid">
         </div>
     </div>
     <script>
+        ej.base.L10n.load({
+            'de-DE': {
+                'grid': {
+                    'NotStartsWith': 'nicht beginnt mit',
+                    'Like': 'Wie',
+                    'NotEndsWith': 'nicht endet mit',
+                    'NotContains': 'nicht enthält',
+                    'IsNull': 'Null',
+                    'NotNull': 'nicht null',
+                    'IsEmpty': 'leer',
+                    'IsNotEmpty': 'nicht leer'
+                }
+            },
+            'ar-AE': {
+                'grid': {
+                    'NotStartsWith': 'لا تبدأ',
+                    'Like': 'يحب',
+                    'NotEndsWith': 'لا ينتهي',
+                    'NotContains': 'لا يحتوي',
+                    'IsNull': 'باطل',
+                    'NotNull': 'غير فارغة',
+                    'IsEmpty': 'فارغ',
+                    'IsNotEmpty': 'ليس فارغًا'
+                }
+            },
+            'zh': {
+                'grid': {
+                    'NotStartsWith': '不是開始於',
+                    'Like': '喜歡',
+                    'NotEndsWith': '不以結束',
+                    'NotContains': '不包含',
+                    'IsNull': '無效的',
+                    'NotNull': '不為空',
+                    'IsEmpty': '空的',
+                    'IsNotEmpty': '不是空的'
+                }
+            },
+            'fr-CH': {
+                'grid': {
+                    'NotStartsWith': 'ne commence pas par',
+                    'Like': 'comme',
+                    'NotEndsWith': 'ne se termine pas avec',
+                    'NotContains': 'ne contient pas',
+                    'IsNull': 'nul',
+                    'NotNull': 'non nul',
+                    'IsEmpty': 'vide',
+                    'IsNotEmpty': 'pas vide'
+                }
+            },
+        });
         var localData = window.data;
         var fLocalData = window.customerData;
         var odatav4 = new ej.data.DataManager({
@@ -50,8 +102,16 @@
             { id: 'CheckBox', type: 'CheckBox' },
             { id: 'Excel', type: 'Excel' }
         ];
+        var localetype = [
+            {id: 'English', type: 'en-US'},
+            {id: 'German - Germany*', type: 'de-DE'},
+            {id: 'French - Switzerland*', type: 'fr-CH'},
+            {id: 'Arabic*', type: 'ar-AE'},
+            {id: 'Chinese - China*', type: 'zh'}
+        ];
         var grid = new ej.grids.Grid({
             dataSource: localData.slice(2, -1),
+            locale: 'en-US',
             allowPaging: true,
             allowFiltering: true,
             filterSettings: { type: 'FilterBar' },
@@ -88,6 +148,17 @@
             }
         });
         dropDownFilterType.appendTo('#filterType');
+        var dropDownLocaleType = new ej.dropdowns.DropDownList({
+            dataSource: localetype,
+            fields: { text: 'id', value: 'type' },
+            value: 'en-US',
+            width: 200,
+            change: (e) => {
+                var dropSelectedValue = e.value;
+                grid.locale = dropSelectedValue;
+            }
+        });
+        dropDownLocaleType.appendTo('#localeType');
     </script>
 </body>
 </html>
