@@ -23,6 +23,8 @@
         <input type="text" tabindex="1" id="localeType">
         <h3 style="display: inline-block;">Filter Type: </h3>
         <input type="text" tabindex="1" id='filterType' />
+        <h3 style="display: inline-block;">Enable FilterBar Operator: </h3>
+        <input type="checkbox" tabindex="1" id='filterBarOperator'/>
         <div id="Grid">
         </div>
     </div>
@@ -157,10 +159,27 @@
             width: 200,
             change: (e) => {
                 var dropSelectedValue = e.value;
+                if (dropSelectedValue === 'ar-AE') {
+                    grid.enableRtl = true;
+                }
+                else {
+                    grid.enableRtl = false;
+                }
                 grid.locale = dropSelectedValue;
             }
         });
         dropDownLocaleType.appendTo('#localeType');
+        var filterbarOperator = new ej.buttons.CheckBox();
+        filterbarOperator.appendTo('#filterBarOperator');
+
+        document.getElementById('filterBarOperator').onclick = () => {
+            if (filterbarOperator.checked) {
+                grid.filterSettings.showFilterBarOperator = true;
+            } else {
+                grid.filterSettings.showFilterBarOperator = false;
+            }
+            grid.clearFiltering();
+        };
     </script>
 </body>
 </html>
