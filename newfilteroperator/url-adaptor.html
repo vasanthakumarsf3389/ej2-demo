@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Filter Operator Demo With Url Data</title>
+    <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+    <script src="../ej2.min.js"></script>
+    <script>
+        function load() {
+            document.body.lastElementChild.remove();
+        }
+    </script>
+</head>
+<body onload="load()">
+    <div>
+        <h3 style="display: inline-block;">Locale Type: </h3>
+        <input type="text" tabindex="1" id="localeType">
+        <h3 style="display: inline-block;">Filter Type: </h3>
+        <input type="text" tabindex="1" id='filterType' />
+        <h3 style="display: inline-block;">Enable FilterBar Operator: </h3>
+        <input type="checkbox" tabindex="1" id='filterBarOperator'/>
+        <div id="Grid">
+        </div>
+    </div>
+    <script>
+        ej.base.L10n.load({
+            'en-US': {
+                'grid': {
+                    'NotStartsWith': 'Does Not Start With',
+                    'Like': 'Like',
+                    'NotEndsWith': 'Does Not End With',
+                    'NotContains': 'Does Not Contain',
+                    'IsNull': 'Null',
+                    'NotNull': 'Not Null',
+                    'IsEmpty': 'Empty',
+                    'IsNotEmpty': 'Not Empty'
+                }
+            },
+            'de-DE': {
+                'grid': {
+                    'NotStartsWith': 'beginnt nicht mit',
+                    'Like': 'Wie',
+                    'NotEndsWith': 'endet nicht mit',
+                    'NotContains': 'enthält nicht',
+                    'IsNull': 'Null',
+                    'NotNull': 'nicht null',
+                    'IsEmpty': 'leer',
+                    'IsNotEmpty': 'nicht leer'
+                }
+            },
+            'ar-AE': {
+                'grid': {
+                    'NotStartsWith': 'لا تبدأ بـ',
+                    'Like': 'يحب',
+                    'NotEndsWith': 'لا تنتهي ب',
+                    'NotContains': 'لا يحتوي',
+                    'IsNull': 'باطل',
+                    'NotNull': 'غير فارغة',
+                    'IsEmpty': 'فارغ',
+                    'IsNotEmpty': 'ليس فارغًا'
+                }
+            },
+            'zh': {
+                'grid': {
+                    'NotStartsWith': '不以開頭',
+                    'Like': '喜歡',
+                    'NotEndsWith': '不以結束',
+                    'NotContains': '不含',
+                    'IsNull': '無效的',
+                    'NotNull': '不為空',
+                    'IsEmpty': '空的',
+                    'IsNotEmpty': '不是空的'
+                }
+            },
+            'fr-CH': {
+                'grid': {
+                    'NotStartsWith': 'Ne commence pas par',
+                    'Like': 'comme',
+                    'NotEndsWith': 'Ne se termine pas par',
+                    'NotContains': 'ne contient pas',
+                    'IsNull': 'nul',
+                    'NotNull': 'non nul',
+                    'IsEmpty': 'vide',
+                    'IsNotEmpty': 'pas vide'
+                }
+            },
+            'cs': {
+                'grid': {
+                    'NotStartsWith': 'nezačíná s',
+                    'Like': 'jako',
+                    'NotEndsWith': 'nekončí s',
+                    'NotContains': 'neobsahuje',
+                    'IsNull': 'nula',
+                    'NotNull': 'nenulový',
+                    'IsEmpty': 'prázdný',
+                    'IsNotEmpty': 'není prázdný'
+                }
+            },
+            'da': {
+                'grid': {
+                    'NotStartsWith': 'starter ikke med',
+                    'Like': 'synes godt om',
+                    'NotEndsWith': 'slutter ikke med',
+                    'NotContains': 'indeholder ikke',
+                    'IsNull': 'nul',
+                    'NotNull': 'ikke null',
+                    'IsEmpty': 'tom',
+                    'IsNotEmpty': 'ikke tom'
+                }
+            },
+            'es': {
+                'grid': {
+                    'NotStartsWith': 'no comienza con',
+                    'Like': 'como',
+                    'NotEndsWith': 'no termina con',
+                    'NotContains': 'no contiene',
+                    'IsNull': 'nula',
+                    'NotNull': 'No nula',
+                    'IsEmpty': 'vacía',
+                    'IsNotEmpty': 'No vacía'
+                }
+            },
+            'fa': {
+                'grid': {
+                    'NotStartsWith': 'با شروع نمی شود',
+                    'Like': 'پسندیدن',
+                    'NotEndsWith': 'به پایان نمی رسد',
+                    'NotContains': 'شامل نمی شود',
+                    'IsNull': 'خالی',
+                    'NotNull': 'تهی نیست',
+                    'IsEmpty': 'خالی',
+                    'IsNotEmpty': 'خالی نیست'
+                }
+            },
+            'fi': {
+                'grid': {
+                    'NotStartsWith': 'ei ala',
+                    'Like': 'Kuten',
+                    'NotEndsWith': 'ei pääty',
+                    'NotContains': 'ei sisällä',
+                    'IsNull': 'tyhjä',
+                    'NotNull': 'ei tyhjä',
+                    'IsEmpty': 'tyhjä',
+                    'IsNotEmpty': 'ei tyhjä'
+                }
+            },
+            'he': {
+                'grid': {
+                    'NotStartsWith': 'לא מתחיל עם',
+                    'Like': 'כמו',
+                    'NotEndsWith': 'לא מסתיים ב',
+                    'NotContains': 'לא מכיל',
+                    'IsNull': 'ריק',
+                    'NotNull': 'לא ריק',
+                    'IsEmpty': 'ריק',
+                    'IsNotEmpty': 'לא ריק'
+                }
+            },
+            'hr': {
+                'grid': {
+                    'NotStartsWith': 'Ne počinje s',
+                    'Like': 'Kuten',
+                    'NotEndsWith': 'Ne završava sa',
+                    'NotContains': 'ne sadrži',
+                    'IsNull': 'ništavan',
+                    'NotNull': 'nije nula',
+                    'IsEmpty': 'prazan',
+                    'IsNotEmpty': 'nije prazno'
+                }
+            },
+            'hu': {
+                'grid': {
+                    'NotStartsWith': 'nem azzal kezdődik',
+                    'Like': 'mint',
+                    'NotEndsWith': 'nem ér véget',
+                    'NotContains': 'nem tartalmaz',
+                    'IsNull': 'nulla',
+                    'NotNull': 'nem nulla',
+                    'IsEmpty': 'üres',
+                    'IsNotEmpty': 'nem üres'
+                }
+            },
+            'id': {
+                'grid': {
+                    'NotStartsWith': 'tidak dimulai dengan',
+                    'Like': 'menyukai',
+                    'NotEndsWith': 'tidak berakhir dengan',
+                    'NotContains': 'tidak mengandung',
+                    'IsNull': 'batal',
+                    'NotNull': 'bukan nol',
+                    'IsEmpty': 'kosong',
+                    'IsNotEmpty': 'tidak kosong'
+                }
+            },
+            'is': {
+                'grid': {
+                    'NotStartsWith': 'byrjar ekki á',
+                    'Like': 'eins og',
+                    'NotEndsWith': 'endar ekki með',
+                    'NotContains': 'inniheldur ekki',
+                    'IsNull': 'núll',
+                    'NotNull': 'ekki núll',
+                    'IsEmpty': 'tómt',
+                    'IsNotEmpty': 'ekki tómt'
+                }
+            },
+            'it': {
+                'grid': {
+                    'NotStartsWith': 'non inizia con',
+                    'Like': 'Piace',
+                    'NotEndsWith': 'non finisce con',
+                    'NotContains': 'non contiene',
+                    'IsNull': 'nulla',
+                    'NotNull': 'non nullo',
+                    'IsEmpty': 'vuota',
+                    'IsNotEmpty': 'non vuoto'
+                }
+            },
+            'ja': {
+                'grid': {
+                    'NotStartsWith': 'で始まらない',
+                    'Like': '好き',
+                    'NotEndsWith': 'で終わらない',
+                    'NotContains': '含まない',
+                    'IsNull': 'ヌル',
+                    'NotNull': 'ヌルではない',
+                    'IsEmpty': '空です',
+                    'IsNotEmpty': '空ではない'
+                }
+            },
+            'ko': {
+                'grid': {
+                    'NotStartsWith': '~로 시작하지 않는다',
+                    'Like': '좋다',
+                    'NotEndsWith': '로 끝나지 않는다',
+                    'NotContains': '포함되어 있지 않다',
+                    'IsNull': '없는',
+                    'NotNull': 'null이 아님',
+                    'IsEmpty': '비어 있는',
+                    'IsNotEmpty': '비어있지 않다'
+                }
+            },
+            'ms': {
+                'grid': {
+                    'NotStartsWith': 'tidak bermula dengan',
+                    'Like': 'suka',
+                    'NotEndsWith': 'tidak berakhir dengan',
+                    'NotContains': 'tidak mengandungi',
+                    'IsNull': 'adalah batal',
+                    'NotNull': 'bukan batal',
+                    'IsEmpty': 'kosong',
+                    'IsNotEmpty': 'tidak kosong'
+                }
+            },
+            'nb': {
+                'grid': {
+                    'NotStartsWith': 'starter ikke med',
+                    'Like': 'som',
+                    'NotEndsWith': 'slutter ikke med',
+                    'NotContains': 'inneholder ikke',
+                    'IsNull': 'null',
+                    'NotNull': 'ikke null',
+                    'IsEmpty': 'tømme',
+                    'IsNotEmpty': 'ikke tom'
+                }
+            },
+            'nl': {
+                'grid': {
+                    'NotStartsWith': 'begint niet met',
+                    'Like': 'leuk vinden',
+                    'NotEndsWith': 'eindigt niet met',
+                    'NotContains': 'bevat geen',
+                    'IsNull': 'nul',
+                    'NotNull': 'niet nul',
+                    'IsEmpty': 'leeg',
+                    'IsNotEmpty': 'niet leeg'
+                }
+            },
+            'pl': {
+                'grid': {
+                    'NotStartsWith': 'nie zaczyna się od',
+                    'Like': 'tak jak',
+                    'NotEndsWith': 'nie kończy się na',
+                    'NotContains': 'nie zawiera',
+                    'IsNull': 'zero',
+                    'NotNull': 'Nie jest zerem',
+                    'IsEmpty': 'pusty',
+                    'IsNotEmpty': 'nie pusty'
+                }
+            },
+            'pt-BR': {
+                'grid': {
+                    'NotStartsWith': 'não começa com',
+                    'Like': 'como',
+                    'NotEndsWith': 'não termina com',
+                    'NotContains': 'não contém',
+                    'IsNull': 'nula',
+                    'NotNull': 'não nulo',
+                    'IsEmpty': 'vazia',
+                    'IsNotEmpty': 'não está vazio'
+                }
+            },
+            'pt': {
+                'grid': {
+                    'NotStartsWith': 'não começa com',
+                    'Like': 'como',
+                    'NotEndsWith': 'não termina com',
+                    'NotContains': 'não contém',
+                    'IsNull': 'nula',
+                    'NotNull': 'não nulo',
+                    'IsEmpty': 'vazia',
+                    'IsNotEmpty': 'não está vazio'
+                }
+            },
+            'ro': {
+                'grid': {
+                    'NotStartsWith': 'nu începe cu',
+                    'Like': 'ca',
+                    'NotEndsWith': 'nu se termină cu',
+                    'NotContains': 'nu contine',
+                    'IsNull': 'nul',
+                    'NotNull': 'nu nul',
+                    'IsEmpty': 'gol',
+                    'IsNotEmpty': 'nu gol'
+                }
+            },
+            'ru': {
+                'grid': {
+                    'NotStartsWith': 'не начинается с',
+                    'Like': 'нравиться',
+                    'NotEndsWith': 'не заканчивается',
+                    'NotContains': 'не содержит',
+                    'IsNull': 'нулевой',
+                    'NotNull': 'не ноль',
+                    'IsEmpty': 'пустой',
+                    'IsNotEmpty': 'не пусто'
+                }
+            },
+            'sk': {
+                'grid': {
+                    'NotStartsWith': 'nezačína s',
+                    'Like': 'pravdepodobne',
+                    'NotEndsWith': 'nekončí s',
+                    'NotContains': 'neobsahuje',
+                    'IsNull': 'nulový',
+                    'NotNull': 'nie je nulový',
+                    'IsEmpty': 'prázdny',
+                    'IsNotEmpty': 'nie prázdny'
+                }
+            },
+            'sv': {
+                'grid': {
+                    'NotStartsWith': 'börjar inte med',
+                    'Like': 'tycka om',
+                    'NotEndsWith': 'slutar inte med',
+                    'NotContains': 'innehåller inte',
+                    'IsNull': 'null',
+                    'NotNull': 'inte null',
+                    'IsEmpty': 'tömma',
+                    'IsNotEmpty': 'inte tom'
+                }
+            },
+            'th': {
+                'grid': {
+                    'NotStartsWith': 'ไม่ได้เริ่มต้นด้วย',
+                    'Like': 'ชอบ',
+                    'NotEndsWith': 'ไม่จบลงด้วย',
+                    'NotContains': 'ไม่มี',
+                    'IsNull': 'โมฆะ',
+                    'NotNull': 'ไม่เป็นโมฆะ',
+                    'IsEmpty': 'ว่างเปล่า',
+                    'IsNotEmpty': 'ไม่ว่างเปล่า'
+                }
+            },
+            'tr': {
+                'grid': {
+                    'NotStartsWith': 'ile başlamaz',
+                    'Like': 'beğenmek',
+                    'NotEndsWith': 'ile bitmiyor',
+                    'NotContains': 'içermiyor',
+                    'IsNull': 'hükümsüz',
+                    'NotNull': 'geçersiz değil',
+                    'IsEmpty': 'boş',
+                    'IsNotEmpty': 'boş değil'
+                }
+            },
+            'vi': {
+                'grid': {
+                    'NotStartsWith': 'không bắt đầu với',
+                    'Like': 'giống',
+                    'NotEndsWith': 'không kết thúc với',
+                    'NotContains': 'không chứa',
+                    'IsNull': 'vô giá trị',
+                    'NotNull': 'có giá trị',
+                    'IsEmpty': 'trống',
+                    'IsNotEmpty': 'không trống'
+                }
+            },
+        });
+        var localData = window.data;
+        var fLocalData = window.customerData;
+        var odatav4 = new ej.data.DataManager({
+            url: 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders/',
+            adaptor: new ej.data.ODataV4Adaptor()
+        });
+        var urlData = new ej.data.DataManager({
+            url: 'https://ej2services.syncfusion.com/js/release/api/UrlDataSource',
+            // url: 'https://ej2services.syncfusion.com/react/release/api/UrlDataSource',
+            // url: 'https://ej2services.syncfusion.com/angular/release/api/UrlDataSource',
+            adaptor: new ej.data.UrlAdaptor()
+        });
+        var fOdatav4 = new ej.data.DataManager({
+            url: 'https://services.odata.org/V4/Northwind/Northwind.svc/Customers/',
+            adaptor: new ej.data.ODataV4Adaptor()
+        });
+        var odata = new ej.data.DataManager({
+            url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+            adaptor: new ej.data.ODataAdaptor()
+        });
+        var fOdata = new ej.data.DataManager({
+            url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Customers',
+            adaptor: new ej.data.ODataAdaptor()
+        });
+        var filtertype = [
+            { id: 'FilterBar', type: 'FilterBar' },
+            { id: 'Menu', type: 'Menu' },
+            { id: 'CheckBox', type: 'CheckBox' },
+            { id: 'Excel', type: 'Excel' }
+        ];
+        var localetype = [
+            {id: 'English', type: 'en-US'},
+            {id: 'German - Germany*', type: 'de-DE'},
+            {id: 'French - Switzerland*', type: 'fr-CH'},
+            {id: 'Arabic*', type: 'ar-AE'},
+            {id: 'Chinese - China*', type: 'zh'}
+        ];
+        var grid = new ej.grids.Grid({
+            // dataSource: localData.slice(2, -1),
+            dataSource: urlData,
+            locale: 'en-US',
+            query:  new ej.data.Query().addParams('dataCount', '1000'),
+            // allowPaging: true,
+            allowFiltering: true,
+            filterSettings: { type: 'FilterBar' },
+            toolbar: ['ColumnChooser'],
+            showColumnChooser: true,
+            columns: [
+                { field: 'EmployeeID', headerText: 'Employee ID', width: 130,  textAlign: 'Right' },
+                { field: 'Employees', headerText: 'Employee Name', width: 150 },
+                { field: 'Designation', headerText: 'Designation', width: 130 },
+                { field: 'CurrentSalary', headerText: 'Current Salary', format: "C2", textAlign: 'Right', width: 140 },
+                { field: 'Mail', headerText: 'Mail', width: '230' },
+                { field: 'Location', width: '140', headerText: 'Location' }
+            ]
+        });
+        grid.appendTo('#Grid');
+        var dropDownFilterType = new ej.dropdowns.DropDownList({
+            dataSource: filtertype,
+            fields: { text: 'type', value: 'id' },
+            value: 'FilterBar',
+            width: 200,
+            change: function (e) {
+                var dropSelectedValue = e.value;
+                grid.filterSettings.type = dropSelectedValue;
+                grid.clearFiltering();
+            }
+        });
+        dropDownFilterType.appendTo('#filterType');
+        var dropDownLocaleType = new ej.dropdowns.DropDownList({
+            dataSource: localetype,
+            fields: { text: 'id', value: 'type' },
+            value: 'en-US',
+            width: 200,
+            change: (e) => {
+                var dropSelectedValue = e.value;
+                if (dropSelectedValue === 'ar-AE') {
+                    grid.enableRtl = true;
+                }
+                else {
+                    grid.enableRtl = false;
+                }
+                grid.locale = dropSelectedValue;
+            }
+        });
+        dropDownLocaleType.appendTo('#localeType');
+        var filterbarOperator = new ej.buttons.CheckBox();
+        filterbarOperator.appendTo('#filterBarOperator');
+
+        document.getElementById('filterBarOperator').onclick = () => {
+            if (filterbarOperator.checked) {
+                grid.filterSettings.showFilterBarOperator = true;
+            } else {
+                grid.filterSettings.showFilterBarOperator = false;
+            }
+            grid.clearFiltering();
+        };
+    </script>
+</body>
+</html>
