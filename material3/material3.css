@@ -51967,7 +51967,7 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-bigger.e-responsive-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
   float: left;
   line-height: 35px;
-  margin-top: -4px;
+  margin-top: -5px;
   padding-left: 0;
   padding-right: 40px;
 }
@@ -52028,7 +52028,8 @@ li.e-separator.e-menu-item.e-excel-separator {
   background: none;
   box-shadow: none;
   padding-left: 0;
-  padding-top: 9px;
+  padding-top: 8px;
+  padding-bottom: 1px;
   line-height: 31px;
 }
 .e-bigger .e-responsive-dialog.e-rtl .e-dlg-header-content .e-res-back-btn,
