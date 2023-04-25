@@ -49093,7 +49093,7 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-grid.e-bigger .e-groupdroparea {
   font-size: 14px;
   min-height: 48px;
-  padding: 15px 15px;
+  padding: 14px 15px;
 }
 .e-bigger .e-grid .e-cloneproperties,
 .e-grid.e-bigger .e-cloneproperties {
@@ -49175,7 +49175,8 @@ li.e-separator.e-menu-item.e-excel-separator {
 }
 .e-bigger .e-grid .e-groupheadercell .e-grouptext,
 .e-grid.e-bigger .e-groupheadercell .e-grouptext {
-  line-height: 18px;
+  line-height: 20px;
+  padding-left: 4px;
 }
 .e-bigger .e-grid .e-row .e-input-group .e-input.e-field,
 .e-bigger .e-grid .e-row .e-input-focus .e-input.e-field,
@@ -49292,11 +49293,11 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-bigger .e-grid span.e-groupsort.e-icons,
 .e-grid.e-bigger span.e-groupsort.e-icons {
   margin-right: 0;
-  padding-top: 7px;
+  padding-top: 7.5px;
 }
 .e-bigger .e-grid.e-rtl span.e-groupsort.e-icons,
 .e-grid.e-bigger.e-rtl span.e-groupsort.e-icons {
-  padding-top: 7px;
+  padding-top: 7.5px;
 }
 .e-bigger .e-grid.e-rtl .e-groupheadercell, .e-bigger .e-grid.e-rtl .e-groupheadercell:hover,
 .e-grid.e-bigger.e-rtl .e-groupheadercell,
@@ -49309,7 +49310,7 @@ li.e-separator.e-menu-item.e-excel-separator {
   margin-left: -8px;
   margin-right: -12px;
   margin-top: 0;
-  padding-top: 7px;
+  padding-top: 8px;
   padding-left: 8px;
 }
 .e-bigger .e-grid .e-groupcaption,
@@ -49428,11 +49429,11 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-grid.e-bigger .e-groupdroparea.e-group-animate .e-drag.e-icon-drag {
   font-size: 16px;
   height: 30px;
-  line-height: 30px;
+  line-height: 31px;
 }
 .e-bigger .e-grid.e-rtl .e-groupdroparea.e-group-animate .e-drag.e-icon-drag,
 .e-grid.e-bigger.e-rtl .e-groupdroparea.e-group-animate .e-drag.e-icon-drag {
-  line-height: 30px;
+  line-height: 31px;
   margin-left: 0;
 }
 .e-bigger .e-grid .e-gridheader .e-headercontent .e-reorderuparrow,
@@ -50677,7 +50678,7 @@ li.e-separator.e-menu-item.e-excel-separator {
   font-size: 14px;
   font-weight: normal;
   opacity: 1;
-  padding: 10.5px 0;
+  padding: 10.4px 0;
   text-align: center;
   text-indent: 1pt;
   -webkit-user-select: none;
@@ -50723,7 +50724,8 @@ li.e-separator.e-menu-item.e-excel-separator {
   vertical-align: middle;
 }
 .e-grid .e-groupheadercell .e-grouptext {
-  line-height: 14px;
+  line-height: 13px;
+  padding-left: 0;
 }
 .e-grid .e-groupheadercell .e-ungroupbutton {
   font-size: 12px;
@@ -51248,6 +51250,10 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-grid.e-rtl .e-groupheadercell span.e-grouptext {
   margin-left: 0;
   margin-right: 0;
+  padding-right: 0;
+}
+.e-bigger .e-grid.e-rtl .e-groupheadercell span.e-grouptext {
+  padding-right: 0;
 }
 .e-grid.e-rtl .e-groupheadercell span {
   float: right;
@@ -51350,7 +51356,7 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-grid.e-rtl span.e-ungroupbutton.e-icons {
   margin-left: 0;
   margin-right: -12px;
-  padding-top: 7px;
+  padding-top: 6px;
 }
 .e-grid.e-rtl.e-default.e-bothlines .e-headercell, .e-grid.e-rtl.e-default.e-bothlines .e-detailheadercell {
   border-width: 0 0 0 1px;
@@ -52268,7 +52274,8 @@ li.e-separator.e-menu-item.e-excel-separator {
   color: #49454e;
   border-radius: 4px;
 }
-.e-grid .e-groupdroparea .e-icons:hover {
+.e-grid .e-groupdroparea .e-icons:hover,
+.e-grid .e-groupdroparea .e-icons.e-focused {
   background-color: rgba(73, 69, 78, 0.08);
 }
 .e-grid .e-tableborder {
