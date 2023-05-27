@@ -118,20 +118,42 @@
                 { field: 'ShipRegion', headerText: 'Ship Region', width: 120, type: 'string' },
             ],
             aggregates: [{
-                columns: [{
-                    type: 'Sum',
-                    field: 'Freight',
-                    format: 'C2',
-                    footerTemplate: 'Sum: ${Sum}'
-                }]
+                columns: [
+                    {
+                        type: 'Sum',
+                        field: 'Freight',
+                        format: 'C2',
+                        footerTemplate: 'Sum: ${Sum}'
+                    },
+                    {
+                        type: 'Average',
+                        field: 'Freight',
+                        format: 'C2',
+                        groupCaptionTemplate: 'Average: ${Average}'
+                    },
+                ]
             },
             {
-                columns: [{
-                    type: 'Average',
-                    field: 'Freight',
-                    format: 'C2',
-                    footerTemplate: 'Average: ${Average}'
-                }]
+                columns: [
+                    {
+                        type: 'Average',
+                        field: 'Freight',
+                        format: 'C2',
+                        footerTemplate: 'Average: ${Average}'
+                    },
+                    {
+                        type: 'Sum',
+                        field: 'Freight',
+                        format: 'C2',
+                        groupFooterTemplate: 'Sum : ${Sum}'
+                    },
+                    // {
+                    //     type: 'Average',
+                    //     field: 'Freight',
+                    //     format: 'C2',
+                    //     groupFooterTemplate: 'Average: ${Average}'
+                    // },
+                ]
             }]
         });
         grid.appendTo('#Grid');
