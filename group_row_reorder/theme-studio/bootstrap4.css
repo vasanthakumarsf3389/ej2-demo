@@ -20728,6 +20728,13 @@ body.e-colorpicker-overflow {
   top: 0 !important;
   left: 0 !important;
 }
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand.e-control.e-lib.e-device.e-popup-open {
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
 .e-content-placeholder.e-daterangepicker.e-placeholder-daterangepicker {
   background-size: 250px 33px;
   min-height: 33px;
@@ -20739,11 +20746,258 @@ body.e-colorpicker-overflow {
   min-height: 40px;
 }
 
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container {
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header {
+  height: 20vh;
+  padding: 2vh 2vw;
+  margin: 0;
+  color: #212529;
+}
+@media (max-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-model-header-wrapper {
+    font-size: 16px;
+  }
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-model-header-wrapper {
+    font-size: 24px;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-model-header-wrapper .e-apply {
+  float: right;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-start-end {
+  margin: 3vh 0 0 0;
+}
+@media (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-start-end {
+    margin: 5vh 0 0 0;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar {
+  min-width: 100%;
+  width: 100%;
+  padding: 0;
+  overflow: unset;
+}
+@media (max-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+@media (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar {
+    min-height: 80vh;
+    height: 80vh;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade {
+  height: 10vh;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #e9ecef;
+  padding: 2vh 2vw;
+  line-height: 5vh;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-prev, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-next, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-prev, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-next, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-prev, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-next {
+  height: 36px;
+  width: 36px;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-next span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-next span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-next span {
+  padding: 10px;
+  line-height: 1;
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-next span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-next span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-prev span, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-next span {
+    font-size: 24px;
+  }
+}
+@media (max-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-title {
+    line-height: 8vh;
+  }
+}
+@media (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-title {
+    line-height: inherit;
+  }
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-month .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-year .e-title, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-header.e-decade .e-title {
+    font-size: 24px;
+  }
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar th {
+    font-size: 24px;
+    height: 48px;
+  }
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-content span.e-day {
+    font-size: 24px;
+    height: 64px;
+    width: 64px;
+    line-height: 64px;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-start-date.e-selected.e-range-hover, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-calendar .e-end-date.e-selected.e-range-hover {
+  border-radius: 0;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-calendar-holder {
+  height: 100%;
+}
+@media (max-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-calendar-container {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+@media (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-calendar-container {
+    min-height: 80vh;
+    height: 80vh;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-separator {
+  margin: 0;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month {
+  height: 69vh;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month table {
+  padding: 0 2vw;
+  height: 69vh;
+  border-spacing: unset;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-footer {
+  display: none;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-presets {
+  max-height: 90%;
+  height: 90%;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-presets ul {
+  height: 100%;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-presets ul li.e-list-item {
+  font-size: 16px;
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-presets ul li.e-list-item {
+    font-size: 24px;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap {
+  position: relative;
+  height: 100%;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header {
+  height: 10%;
+  padding: 2.5vh 2.5vw;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 3vh;
+  border-bottom: none;
+}
+@media (min-device-width: 768px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header {
+    font-size: 2vw;
+  }
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header .e-popup-close {
+  float: left;
+  padding: 1vh 2vw;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header .e-model-title {
+  padding: 1vh 2vw;
+  text-transform: capitalize;
+}
+
 @media screen and (orientation: landscape) {
-  .e-daterangepicker .e-calendar.e-device .e-month table {
-    display: inline-block;
-    height: 150px;
-    overflow: auto;
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-presets {
+    max-height: 85%;
+    height: 85%;
+  }
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header {
+    height: 15%;
+    font-size: 2vw;
+  }
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header .e-popup-close {
+    padding: 1vh 1vw;
+  }
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-range-mob-popup-wrap .e-model-header .e-model-title {
+    padding: 1vh 1vw;
+  }
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header {
+    width: 100%;
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header {
+    height: 27vh;
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header {
+    height: 25vh;
+  }
+}
+@media screen and (orientation: landscape) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-start-end {
+    margin: 0;
+    height: 38px;
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-start-end {
+    margin: 5vh 0 0 0;
+  }
+}
+@media screen and (orientation: landscape) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-date-range-container .e-range-header .e-day-span {
+    margin: 5px 0;
+    font-size: 20px;
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-calendar-container {
+    min-height: 75vh;
+    height: 75vh;
+  }
+}
+@media screen and (orientation: landscape) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-year, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-decade {
+    overflow-y: auto;
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-year, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-decade {
+    height: 60vh;
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-year, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-decade {
+    height: 65vh;
+  }
+}
+@media screen and (orientation: landscape) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month table, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-year table, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-decade table {
+    display: table;
+    border-spacing: unset;
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 600px) {
+  .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-month table, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-year table, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-content.e-decade table {
+    height: 65vh;
   }
 }
 .e-outline.e-float-input.e-control-wrapper label.e-float-text.e-label-bottom span.e-float-text-content.e-float-text-overflow.e-date-time-icon {
@@ -20956,6 +21210,14 @@ body.e-colorpicker-overflow {
   color: #fff;
 }
 
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-model-header {
+  background-color: #fff;
+  color: #212529;
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup.e-popup-expand .e-model-header .e-popup-close {
+  color: #212529;
+}
+
 /*! component icons */
 .e-input-group-icon.e-range-icon,
 *.e-control-wrapper .e-input-group-icon.e-range-icon {
@@ -21016,6 +21278,15 @@ body.e-colorpicker-overflow {
 *.e-control-wrapper.e-small.e-bigger .e-input-group-icon.e-range-icon,
 *.e-small.e-bigger .e-control-wrapper .e-input-group-icon.e-range-icon {
   font-size: 15px;
+}
+
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup-expand .e-range-header .e-popup-close::before, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup-expand .e-model-header .e-popup-close::before {
+  content: "\e745";
+  font-family: "e-icons";
+}
+.e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup-expand .e-range-header .e-apply::before, .e-daterangepick-mob-popup-wrap .e-daterangepicker.e-popup-expand .e-model-header .e-apply::before {
+  content: "\e718";
+  font-family: "e-icons";
 }
 
 .e-input-group.e-control-wrapper.e-datetime-wrapper.e-non-edit.e-input-focus .e-input:focus ~ .e-clear-icon,
@@ -27113,6 +27384,9 @@ body.e-colorpicker-overflow {
 .e-tab .e-tab-header .e-toolbar-item:hover {
   background: inherit;
 }
+.e-tab .e-tab-header .e-toolbar-item.e-active:hover {
+  background: inherit;
+}
 .e-tab .e-tab-header .e-toolbar-item .e-ripple-element {
   background: rgba(222, 226, 230, 0);
 }
@@ -27594,6 +27868,10 @@ body.e-colorpicker-overflow {
 .e-tab.e-fill .e-tab-header .e-toolbar-item.e-active {
   border: 0;
 }
+.e-tab.e-fill .e-tab-header .e-toolbar-item.e-active.e-disable.e-overlay .e-tab-text,
+.e-tab.e-fill .e-tab-header .e-toolbar-item.e-active.e-disable.e-overlay .e-tab-icon {
+  color: #6c757d;
+}
 .e-tab.e-fill .e-tab-header .e-toolbar-item.e-active .e-tab-wrap {
   background: #007bff;
   border-radius: 4px;
@@ -27753,6 +28031,10 @@ body.e-colorpicker-overflow {
   border: 0;
   margin: 0;
   background: inherit;
+}
+.e-tab.e-background .e-tab-header .e-toolbar-item.e-active.e-disable.e-overlay .e-tab-text,
+.e-tab.e-background .e-tab-header .e-toolbar-item.e-active.e-disable.e-overlay .e-tab-icon {
+  color: #6c757d;
 }
 .e-tab.e-background .e-tab-header .e-toolbar-item.e-active .e-tab-wrap {
   background: #007bff;
@@ -40543,6 +40825,14 @@ textarea.e-de-cmt-textarea {
   padding-right: 25px;
 }
 
+.e-bigger.e-responsive-dialog .e-xlflmenu .e-xlfl-dlgfields,
+.e-bigger.e-responsive-dialog .e-xlflmenu .e-xlfl-fieldset {
+  font-weight: 500;
+}
+.e-bigger.e-responsive-dialog .e-xlflmenu .e-xlfl-optr:first-child {
+  width: 70%;
+}
+
 .e-bigger .e-xlflmenu {
   min-height: 362px;
 }
@@ -42685,6 +42975,7 @@ li.e-separator.e-menu-item.e-excel-separator {
 .e-grid td.e-active {
   font-weight: normal;
 }
+.e-grid:not(.e-row-responsive) .e-gridcontent tr.e-row:first-child td.e-cellselectionbackground,
 .e-grid td.e-cellselectionbackground {
   font-weight: normal;
 }
@@ -45805,7 +46096,7 @@ ejs-filemanager {
 .e-filemanager.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .e-checkbox-wrapper,
 .e-bigger .e-filemanager.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .e-checkbox-wrapper,
 .e-filemanager.e-bigger.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .e-checkbox-wrapper {
-  z-index: 1000;
+  z-index: 999;
 }
 .e-filemanager.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .e-list-text,
 .e-bigger .e-filemanager.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .e-list-text,
@@ -60202,13 +60493,22 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   display: none;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-editor-label-container {
+  -ms-flex-align: center;
+      align-items: center;
   background: #f8f8f8;
+  /* stylelint-disable */
+  display: -ms-flexbox !important;
+  display: flex !important;
+  /* stylelint-enable */
+  height: 40px;
+  -ms-flex-pack: center;
+      justify-content: center;
   opacity: 100%;
-  padding: 17px 10px 16px 20px;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-editor-label-container .e-editor-label {
   color: #333;
   font: 500 13px Helvetica;
+  margin-bottom: 0;
   opacity: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -60270,11 +60570,13 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   margin: 0 0 0 6px;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-text-wrap .e-tab-icon {
-  height: auto;
-  width: 14px;
+  height: fit-content;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-text-wrap .e-tab-icon::before {
   font-size: 14px;
+  /* stylelint-disable */
+  top: 0 !important;
+  /* stylelint-enable */
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-filter-tab-container.e-rtl .e-tab-header .e-toolbar-item .e-icon-left + .e-tab-text {
   margin: 0 6px 0 0;
@@ -60287,7 +60589,8 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   height: 158px !important;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog.e-node-limit .e-excelfilter .e-member-editor-container-outer-div {
-  height: 140px !important;
+  height: 155px !important;
+  /* stylelint-enable */
 }
 .e-pivotfieldlist-container .e-member-editor-dialog .e-label-filter,
 .e-pivotfieldlist-container .e-member-editor-dialog .e-value-filter {
@@ -60319,10 +60622,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-pivotfieldlist-container .e-member-editor-dialog .e-label-filter .e-disable,
 .e-pivotfieldlist-container .e-member-editor-dialog .e-value-filter .e-disable {
   display: none;
-}
-.e-pivotfieldlist-container .e-member-editor-dialog.e-excel-filter .e-editor-label-container {
-  opacity: 100%;
-  padding: 18px 10px 12px 20px;
 }
 .e-pivotfieldlist-container .e-member-editor-dialog.e-rtl .e-toolbar .e-toolbar-items {
   margin-left: 0;
@@ -60394,7 +60693,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   min-width: 300px !important;
 }
 .e-pivotfieldlist-container .e-value-field-settings .e-dlg-content {
-  overflow: auto;
+  overflow: auto !important;
 }
 .e-pivotfieldlist-container .e-value-field-settings .e-value-field-div-content {
   padding: 0 20px 10px;
@@ -60479,7 +60778,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-pivotfieldlist-container .e-member-editor-dialog .e-dlg-content,
 .e-pivotfieldlist-container .e-value-field-settings .e-dlg-content {
   overflow: hidden;
-  overflow-y: scroll;
   padding: 0 !important;
   /* stylelint-enable */
 }
@@ -60656,10 +60954,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   /* stylelint-disable */
   /* stylelint-enable */
 }
-.e-bigger .e-pivotfieldlist-container .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div,
-.e-bigger.e-pivotfieldlist-container .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div {
-  height: 124px;
-}
 .e-bigger .e-pivotfieldlist-container .e-member-editor-dialog .e-editor-search-container .e-sort-ascend-icon,
 .e-bigger .e-pivotfieldlist-container .e-member-editor-dialog .e-editor-search-container .e-sort-descend-icon,
 .e-bigger.e-pivotfieldlist-container .e-member-editor-dialog .e-editor-search-container .e-sort-ascend-icon,
@@ -60725,6 +61019,14 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger.e-pivotfieldlist-container .e-member-editor-dialog.e-rtl .e-member-editor-outer-container ul li .e-kpiTrend-icon,
 .e-bigger.e-pivotfieldlist-container .e-member-editor-dialog.e-rtl .e-member-editor-outer-container ul li .e-kpiValue-icon {
   margin-left: 10px;
+}
+.e-bigger .e-pivotfieldlist-container .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container:not(.e-excelfilter) .e-member-editor-container-outer-div,
+.e-bigger.e-pivotfieldlist-container .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container:not(.e-excelfilter) .e-member-editor-container-outer-div {
+  height: 128px;
+}
+.e-bigger .e-pivotfieldlist-container .e-member-editor-dialog .e-editor-label-container,
+.e-bigger.e-pivotfieldlist-container .e-member-editor-dialog .e-editor-label-container {
+  height: 50px;
 }
 .e-bigger .e-pivotfieldlist-container .e-member-editor-dialog,
 .e-bigger.e-pivotfieldlist-container .e-member-editor-dialog {
@@ -60926,7 +61228,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   font-size: 14px;
   max-width: 700px;
   min-width: 300px;
-  /* stylelint-enable */
   /* stylelint-enable */
 }
 .e-pivotfieldlist-container.sf-pivotfieldlist-container .e-field-list-container .e-field-table .e-field-list {
@@ -63242,6 +63543,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-pivotview .e-member-editor-dialog {
   min-width: 320px;
   /* stylelint-disable */
+  /* stylelint-disable */
 }
 .e-pivotview .e-member-editor-dialog .e-editor-search-container {
   display: -ms-flexbox;
@@ -63342,14 +63644,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   padding-top: 20px;
 }
 .e-pivotview .e-member-editor-dialog .e-excelfilter .e-member-editor-container-outer-div {
-  height: 160px;
-}
-.e-pivotview .e-member-editor-dialog .e-excelfilter .e-editor-label-container {
-  opacity: 100%;
-  padding: 18px 10px 12px 20px;
+  height: 158px;
 }
 .e-pivotview .e-member-editor-dialog.e-node-limit .e-excelfilter .e-member-editor-container-outer-div {
-  height: 140px;
+  height: 155px;
 }
 .e-pivotview .e-member-editor-dialog .e-label-filter,
 .e-pivotview .e-member-editor-dialog .e-value-filter {
@@ -63389,13 +63687,13 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   margin: 0 0 0 6px;
 }
 .e-pivotview .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-text-wrap .e-tab-icon {
-  height: 14px;
-  min-width: 14px;
-  width: 14px;
-  height: auto;
+  height: fit-content;
 }
 .e-pivotview .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-text-wrap .e-tab-icon::before {
   font-size: 14px;
+  /* stylelint-disable */
+  top: 0 !important;
+  /* stylelint-enable */
 }
 .e-pivotview .e-member-editor-dialog .e-filter-tab-container.e-rtl .e-tab-header .e-toolbar-item .e-icon-left + .e-tab-text {
   margin: 0 6px 0 0;
@@ -63406,19 +63704,26 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-pivotview .e-member-editor-dialog .e-clear-filter-button {
   float: left;
   margin: 0;
-  /* stylelint-enable */
 }
 .e-pivotview .e-member-editor-dialog .e-clear-filter-button.e-disable {
   display: none;
 }
 .e-pivotview .e-member-editor-dialog .e-editor-label-container {
+  -ms-flex-align: center;
+      align-items: center;
   background: #f8f8f8;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  /* stylelint-enable */
+  height: 40px;
+  -ms-flex-pack: center;
+      justify-content: center;
   opacity: 100%;
-  padding: 17px 10px 16px 20px;
 }
 .e-pivotview .e-member-editor-dialog .e-editor-label-container .e-editor-label {
   color: #333;
   font: 500 13px Helvetica;
+  margin-bottom: 0;
   opacity: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63482,6 +63787,9 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 }
 .e-pivotview .e-member-editor-dialog.e-olap-editor-dialog.e-rtl .e-member-editor-outer-container ul {
   margin-right: 0;
+}
+.e-pivotview .e-member-editor-dialog .e-member-editor-outer-container:not(.e-excelfilter) .e-editor-search-container {
+  padding-top: 4px !important;
 }
 .e-pivotview .e-value-field-settings .e-dlg-header-content,
 .e-pivotview .e-member-editor-dialog .e-dlg-header-content,
@@ -63609,7 +63917,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   font-size: 16px;
 }
 .e-pivotview .e-pivot-toolbar .e-pivot-toolbar-menu {
-  background-color: transparent;
+  background-color: #fff;
   border: none;
   background-color: #f8f9fa;
   color: #495057;
@@ -63775,10 +64083,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   height: 38px !important;
   /* stylelint-enable */
 }
-.e-bigger .e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div,
-.e-bigger.e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div {
-  height: 140px;
-}
 .e-bigger .e-pivotview .e-member-editor-dialog .e-editor-search-container .e-filter-sort .e-member-sort .e-sort-ascend-icon,
 .e-bigger .e-pivotview .e-member-editor-dialog .e-editor-search-container .e-filter-sort .e-member-sort .e-sort-descend-icon,
 .e-bigger.e-pivotview .e-member-editor-dialog .e-editor-search-container .e-filter-sort .e-member-sort .e-sort-ascend-icon,
@@ -63796,6 +64100,14 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger .e-pivotview .e-member-editor-dialog.e-rtl .e-member-editor-outer-container ul,
 .e-bigger.e-pivotview .e-member-editor-dialog.e-rtl .e-member-editor-outer-container ul {
   margin-right: -30px !important;
+}
+.e-bigger .e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div,
+.e-bigger.e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container-outer-div {
+  height: 128px;
+}
+.e-bigger .e-pivotview .e-member-editor-dialog .e-editor-label-container,
+.e-bigger.e-pivotview .e-member-editor-dialog .e-editor-label-container {
+  height: 50px;
 }
 .e-bigger .e-pivotview .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-toolbar-item .e-icon-left + .e-tab-text,
 .e-bigger.e-pivotview .e-member-editor-dialog .e-filter-tab-container .e-tab-header .e-toolbar-item .e-icon-left + .e-tab-text {
@@ -63952,7 +64264,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 /*! PivotView theme */
 .e-pivotview {
   /* stylelint-enable */
-  /* stylelint-disable */
   /* stylelint-enable */
   /* stylelint-disable */
   /* stylelint-enable */
@@ -64680,7 +64991,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-pivotview .e-chart-grouping-bar .e-axis-value .e-group-chart-values-drodown input.e-input {
   padding-bottom: 7px;
 }
-.e-pivotview .e-icons:not(.e-frame):not(.e-btn-icon):not(.e-sort):not(.e-dropdown-icon):not(.e-pv-filter):not(.e-pv-filtered):not(.e-remove):not(.e-edit):not(.e-drag) {
+.e-pivotview .e-icons:not(.e-frame):not(.e-btn-icon):not(.e-sort):not(.e-dropdown-icon):not(.e-pv-filter):not(.e-pv-filtered):not(.e-remove):not(.e-edit):not(.e-drag):not(.e-selected-option-icon) {
   height: auto;
   width: auto;
 }
@@ -65231,9 +65542,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger .e-pivotview,
 .e-bigger.e-pivotview {
   /* stylelint-disable */
-  /* stylelint-enable */
   /* stylelint-disable */
-  /* stylelint-enable */
 }
 .e-bigger .e-pivotview .e-chart-grouping-bar .e-axis-value .e-group-chart-values-drodown,
 .e-bigger.e-pivotview .e-chart-grouping-bar .e-axis-value .e-group-chart-values-drodown {
@@ -65345,6 +65654,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   /* stylelint-disable */
   font-size: 12px !important;
   height: 12px !important;
+  /* stylelint-enable */
   width: 20px;
   padding-left: 12px;
 }
@@ -65428,8 +65738,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger.e-pivotview .e-group-rows .e-pvt-btn-div .e-pivot-button .e-pv-filtered,
 .e-bigger.e-pivotview .e-group-rows .e-pvt-btn-div .e-pivot-button .e-remove,
 .e-bigger.e-pivotview .e-group-rows .e-pvt-btn-div .e-pivot-button .e-edit {
+  /* stylelint-disable */
   font-size: 12px !important;
   height: 12px !important;
+  /* stylelint-enable */
   width: 20px;
   padding-left: 12px;
 }
@@ -65444,10 +65756,6 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger .e-pivotview .e-sortfilterdiv,
 .e-bigger.e-pivotview .e-sortfilterdiv {
   font-size: 12px !important;
-}
-.e-bigger .e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container,
-.e-bigger.e-pivotview .e-member-editor-dialog .e-dlg-content .e-member-editor-outer-container .e-member-editor-container {
-  height: 140px;
 }
 .e-bigger .e-pivotview .e-stackedheadercelldiv,
 .e-bigger .e-pivotview .e-stackedheadertext,
@@ -65467,13 +65775,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 }
 .e-bigger .e-pivotview .e-rowcell,
 .e-bigger.e-pivotview .e-rowcell {
-  /* stylelint-disable */
   font-size: 13px !important;
 }
 .e-bigger .e-pivotview.e-rtl,
 .e-bigger.e-pivotview.e-rtl {
-  /* stylelint-enable */
-  /* stylelint-disable */
   /* stylelint-enable */
 }
 .e-bigger .e-pivotview.e-rtl .e-grid .e-rowsheader,
@@ -72583,10 +72888,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   line-height: 32px;
   margin-right: 0;
 }
-.e-dropdown-popup.e-colorpicker-popup .e-container .e-custom-palette .e-palette {
+.e-dropdown-popup.e-spreadsheet-color-popup .e-container .e-custom-palette .e-palette {
   padding: 0;
 }
-.e-dropdown-popup.e-colorpicker-popup .e-container .e-switch-ctrl-btn {
+.e-dropdown-popup.e-spreadsheet-color-popup .e-container .e-switch-ctrl-btn {
   padding-top: 14px;
 }
 .e-dropdown-popup.e-font-family ul .e-item:nth-child(1) {
@@ -75488,6 +75793,9 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-appbar .e-appbar-spacer {
   -ms-flex-positive: 1;
       flex-grow: 1;
+}
+.e-appbar .e-btn {
+  border-image: unset;
 }
 
 .e-inherit.e-menu-wrapper.e-scrollable .e-menu,
