@@ -17605,6 +17605,7 @@ button .e-badge.e-badge-circle.e-badge-ghost {
   line-height: 1;
   padding: 0;
   width: 2.5em;
+  border-radius: 50%;
 }
 .e-small .e-btn.e-round .e-btn-icon,
 .e-small.e-btn.e-round .e-btn-icon,
@@ -20009,9 +20010,9 @@ ejs-calendar {
 .e-calendar .e-content td:focus span.e-day,
 .e-bigger.e-small .e-calendar .e-content td:focus span.e-day {
   background-color: #eee;
+  color: rgba(0, 0, 0, 0.87);
   border: none;
   border-radius: 50%;
-  color: rgba(0, 0, 0, 0.87);
 }
 .e-calendar .e-content td.e-disabled span.e-day, .e-calendar .e-content td.e-disabled:hover span.e-day, .e-calendar .e-content td.e-disabled:focus span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-disabled span.e-day,
@@ -39749,8 +39750,8 @@ ejs-sidebar {
   margin-top: -2.5em;
   position: absolute;
   right: 5px;
-  top: 100%;
   width: 24px;
+  top: 100%;
 }
 
 .e-multiselect .e-down-icon .e-chips-close.e-close-hooker,
@@ -48859,13 +48860,13 @@ label[for*=_wholeWord_e-de-rtl] {
 .e-pager.e-bigger div.e-parentmsgbar {
   padding-bottom: 8px;
   padding-right: 24px;
-  padding-top: 15px;
+  padding-top: 22px;
 }
 .e-bigger .e-pager .e-pagerdropdown,
 .e-pager.e-bigger .e-pagerdropdown {
   height: 40px;
   margin: -40px 0 0 16px;
-  margin-top: -22px;
+  margin-top: -36px;
   width: 90px;
 }
 .e-bigger .e-pager .e-pagercontainer .e-firstpage,
@@ -48928,7 +48929,7 @@ label[for*=_wholeWord_e-de-rtl] {
 .e-bigger .e-pager.e-rtl div.e-parentmsgbar,
 .e-pager.e-bigger.e-rtl div.e-parentmsgbar {
   margin-left: 6px;
-  margin-top: -3px;
+  margin-top: -1px;
 }
 .e-bigger .e-pager .e-numericitem,
 .e-pager.e-bigger .e-numericitem {
@@ -48953,28 +48954,6 @@ label[for*=_wholeWord_e-de-rtl] {
   border-radius: 16px;
   padding: 10px 13px;
 }
-.e-bigger .e-pager.e-rtl .e-spacing, .e-bigger .e-pager.e-rtl .e-numericitem:hover, .e-bigger .e-pager.e-rtl .e-currentitem,
-.e-pager.e-bigger.e-rtl .e-spacing,
-.e-pager.e-bigger.e-rtl .e-numericitem:hover,
-.e-pager.e-bigger.e-rtl .e-currentitem {
-  margin: 11px 4px 0 0;
-  padding: 6px;
-}
-.e-bigger .e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active),
-.e-pager.e-bigger .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 10px 13px;
-}
-.e-bigger .e-pager.e-rtl, .e-bigger .e-pager.e-rtl .e-numericitem:hover, .e-bigger .e-pager.e-rtl .e-currentitem,
-.e-pager.e-bigger.e-rtl,
-.e-pager.e-bigger.e-rtl .e-numericitem:hover,
-.e-pager.e-bigger.e-rtl .e-currentitem {
-  margin: 0 8px;
-  padding: 10px 13px;
-}
-.e-bigger .e-pager.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active),
-.e-pager.e-bigger.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 10px 13px;
-}
 .e-bigger .e-pager.e-rtl .e-pp, .e-bigger .e-pager.e-rtl .e-np, .e-bigger .e-pager.e-rtl .e-pp:hover, .e-bigger .e-pager.e-rtl .e-np:hover,
 .e-pager.e-bigger.e-rtl .e-pp,
 .e-pager.e-bigger.e-rtl .e-np,
@@ -48985,11 +48964,11 @@ label[for*=_wholeWord_e-de-rtl] {
 }
 .e-bigger .e-pager.e-rtl .e-pagerdropdown,
 .e-pager.e-bigger.e-rtl .e-pagerdropdown {
-  margin: -38px 18px 0 0;
+  margin: -35px 18px 0 0;
 }
 .e-bigger .e-pager.e-rtl .e-pagerconstant,
 .e-pager.e-bigger.e-rtl .e-pagerconstant {
-  margin: 8px 16px 14px 0;
+  margin: 8px 16px 16px 0;
 }
 .e-bigger .e-pager .e-pagercontainer .e-firstpage,
 .e-bigger .e-pager .e-pagercontainer .e-prevpage,
@@ -49035,11 +49014,14 @@ label[for*=_wholeWord_e-de-rtl] {
 .e-pager [class^=e-] {
   box-sizing: border-box;
 }
+.e-pager .e-pager-default.e-hide {
+  display: none;
+}
 .e-pager div.e-parentmsgbar {
   float: right;
   padding-bottom: 9px;
   padding-right: 18px;
-  padding-top: 14px;
+  padding-top: 18px;
 }
 .e-pager .e-pagesizes {
   display: inline;
@@ -49049,7 +49031,7 @@ label[for*=_wholeWord_e-de-rtl] {
   height: 32px;
   margin-left: 12px;
   margin-right: 0;
-  margin-top: -22px;
+  margin-top: -26px;
   overflow: hidden;
   vertical-align: middle;
   width: 90px;
@@ -49091,9 +49073,6 @@ label[for*=_wholeWord_e-de-rtl] {
   cursor: pointer;
   padding: 6px;
   text-decoration: none;
-}
-.e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 6px;
 }
 .e-pager .e-currentitem {
   font-style: normal;
@@ -49214,7 +49193,6 @@ label[for*=_wholeWord_e-de-rtl] {
     padding-right: 0;
     padding-top: 0;
     text-align: center;
-    vertical-align: top;
     width: calc(60% - 48px);
   }
   .e-pager .e-pagesizes {
@@ -49273,9 +49251,10 @@ label[for*=_wholeWord_e-de-rtl] {
 .e-pager.e-rtl .e-parentmsgbar {
   float: left;
   margin-left: 6px;
+  padding-top: 21px;
 }
 .e-pager.e-rtl .e-pagerdropdown {
-  margin: -30px 18px 0 10px;
+  margin: -33px 18px 0 10px;
 }
 .e-pager.e-rtl .e-pagerconstant {
   margin: 14px;
@@ -49336,9 +49315,6 @@ label[for*=_wholeWord_e-de-rtl] {
 }
 .e-pager.e-rtl .e-spacing, .e-pager.e-rtl .e-numericitem:hover, .e-pager.e-rtl .e-currentitem {
   margin: 11px 4px 0 0;
-  padding: 6px;
-}
-.e-pager.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
   padding: 6px;
 }
 .e-pager.e-rtl .e-pp, .e-pager.e-rtl .e-np, .e-pager.e-rtl .e-pp:hover, .e-pager.e-rtl .e-np:hover {
@@ -49409,9 +49385,6 @@ label[for*=_wholeWord_e-de-rtl] {
 .e-pager .e-numericitem:hover {
   color: #000;
   opacity: 0.87;
-}
-.e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  border-left: 0 solid #e0e0e0;
 }
 .e-pager .e-numericitem:not(.e-active):not(.e-np):not(.e-pp):hover {
   background-color: #eee;
@@ -50895,7 +50868,6 @@ li.e-separator.e-menu-item.e-excel-separator {
 }
 .e-grid .e-group-animator .e-icon-drag.e-icons {
   margin-left: 0;
-  margin-right: -8px;
 }
 .e-grid .e-groupdroparea.e-group-animate span.e-drag.e-icons.e-icon-drag {
   cursor: move;
@@ -55151,6 +55123,10 @@ ejs-filemanager {
   opacity: 0.5;
   padding: 4px;
   text-align: center;
+}
+.e-bigger .e-filemanager .e-grid.e-rtl .e-checkbox-wrapper .e-frame,
+.e-filemanager.e-bigger .e-grid.e-rtl .e-checkbox-wrapper .e-frame {
+  margin-right: -10px;
 }
 .e-bigger .e-filemanager .e-large-icons .e-checkbox-wrapper .e-frame,
 .e-filemanager.e-bigger .e-large-icons .e-checkbox-wrapper .e-frame {
@@ -77751,6 +77727,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger.e-schedule .e-month-view .e-resource-name,
 .e-bigger.e-schedule .e-month-view .e-m-day {
   font-size: 14px;
+}
+.e-bigger .e-schedule .e-year-view .e-calendar-wrapper .e-month-calendar.e-calendar,
+.e-bigger.e-schedule .e-year-view .e-calendar-wrapper .e-month-calendar.e-calendar {
+  min-width: 306px;
 }
 
 .e-schedule.e-multi-drag .e-vertical-view .e-all-day-appointment-wrapper .e-appointment.e-appointment-border, .e-schedule.e-multi-drag .e-vertical-view .e-all-day-appointment-wrapper .e-appointment:focus {

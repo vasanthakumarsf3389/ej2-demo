@@ -9499,6 +9499,7 @@ button .e-badge.e-badge-circle.e-badge-ghost {
   line-height: 1;
   padding: 0;
   width: 24px;
+  border-radius: 50%;
 }
 .e-small .e-btn.e-round .e-btn-icon,
 .e-small.e-btn.e-round .e-btn-icon,
@@ -11926,9 +11927,9 @@ ejs-calendar {
 .e-calendar .e-content td:focus span.e-day,
 .e-bigger.e-small .e-calendar .e-content td:focus span.e-day {
   background-color: #f2f4f6;
+  color: #212529;
   border: none;
   border-radius: 4px;
-  color: #212529;
 }
 .e-calendar .e-content td.e-disabled span.e-day, .e-calendar .e-content td.e-disabled:hover span.e-day, .e-calendar .e-content td.e-disabled:focus span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-disabled span.e-day,
@@ -31350,8 +31351,8 @@ ejs-sidebar {
   margin-top: -2.9em;
   position: absolute;
   right: 0;
-  top: 100%;
   width: auto;
+  top: 100%;
 }
 
 .e-multiselect .e-down-icon .e-chips-close.e-close-hooker,
@@ -39852,7 +39853,7 @@ textarea.e-de-cmt-textarea {
 .e-bigger .e-pager.e-rtl div.e-parentmsgbar,
 .e-pager.e-bigger.e-rtl div.e-parentmsgbar {
   margin-left: 6px;
-  margin-top: 2px;
+  margin-top: 9px;
 }
 .e-bigger .e-pager .e-numericitem,
 .e-pager.e-bigger .e-numericitem {
@@ -39877,28 +39878,6 @@ textarea.e-de-cmt-textarea {
   border-radius: 0;
   padding: 12px 14px 13px;
 }
-.e-bigger .e-pager.e-rtl .e-spacing, .e-bigger .e-pager.e-rtl .e-numericitem:hover, .e-bigger .e-pager.e-rtl .e-currentitem,
-.e-pager.e-bigger.e-rtl .e-spacing,
-.e-pager.e-bigger.e-rtl .e-numericitem:hover,
-.e-pager.e-bigger.e-rtl .e-currentitem {
-  margin: 0;
-  padding: 11px 12px 10px 11px;
-}
-.e-bigger .e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active),
-.e-pager.e-bigger .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 12px 14px 13px;
-}
-.e-bigger .e-pager.e-rtl, .e-bigger .e-pager.e-rtl .e-numericitem:hover, .e-bigger .e-pager.e-rtl .e-currentitem,
-.e-pager.e-bigger.e-rtl,
-.e-pager.e-bigger.e-rtl .e-numericitem:hover,
-.e-pager.e-bigger.e-rtl .e-currentitem {
-  margin: 0;
-  padding: 12px 14px 13px 14px;
-}
-.e-bigger .e-pager.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active),
-.e-pager.e-bigger.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 12px 14px 13px 14px;
-}
 .e-bigger .e-pager.e-rtl .e-pp, .e-bigger .e-pager.e-rtl .e-np, .e-bigger .e-pager.e-rtl .e-pp:hover, .e-bigger .e-pager.e-rtl .e-np:hover,
 .e-pager.e-bigger.e-rtl .e-pp,
 .e-pager.e-bigger.e-rtl .e-np,
@@ -39913,7 +39892,7 @@ textarea.e-de-cmt-textarea {
 }
 .e-bigger .e-pager.e-rtl .e-pagerconstant,
 .e-pager.e-bigger.e-rtl .e-pagerconstant {
-  margin: 13px 16px 13px 0;
+  margin: 20px 16px 8px 0;
 }
 .e-bigger .e-pager .e-pagercontainer .e-firstpage,
 .e-bigger .e-pager .e-pagercontainer .e-prevpage,
@@ -39959,11 +39938,14 @@ textarea.e-de-cmt-textarea {
 .e-pager [class^=e-] {
   box-sizing: border-box;
 }
+.e-pager .e-pager-default.e-hide {
+  display: none;
+}
 .e-pager div.e-parentmsgbar {
   float: right;
   padding-bottom: 9px;
   padding-right: 0;
-  padding-top: 10px;
+  padding-top: 12px;
 }
 .e-pager .e-pagesizes {
   display: inline;
@@ -39980,7 +39962,7 @@ textarea.e-de-cmt-textarea {
 }
 .e-pager .e-pagerconstant {
   display: inline-block;
-  margin: 11px 0 6px 8px;
+  margin: 11px 0 8px 8px;
   overflow: hidden;
   width: auto;
 }
@@ -40015,9 +39997,6 @@ textarea.e-de-cmt-textarea {
   cursor: pointer;
   padding: 12px 11px 11px 11px;
   text-decoration: none;
-}
-.e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  padding: 12px 11px 11px 11px;
 }
 .e-pager .e-currentitem {
   font-style: normal;
@@ -40138,7 +40117,6 @@ textarea.e-de-cmt-textarea {
     padding-right: 0;
     padding-top: 0;
     text-align: center;
-    vertical-align: top;
     width: calc(60% - 48px);
   }
   .e-pager .e-pagesizes {
@@ -40197,9 +40175,10 @@ textarea.e-de-cmt-textarea {
 .e-pager.e-rtl .e-parentmsgbar {
   float: left;
   margin-left: 6px;
+  padding-top: 10px;
 }
 .e-pager.e-rtl .e-pagerdropdown {
-  margin: -20px 16px 0 0;
+  margin: -16px 16px 0 0;
 }
 .e-pager.e-rtl .e-pagerconstant {
   margin: 8px;
@@ -40260,9 +40239,6 @@ textarea.e-de-cmt-textarea {
 }
 .e-pager.e-rtl .e-spacing, .e-pager.e-rtl .e-numericitem:hover, .e-pager.e-rtl .e-currentitem {
   margin: 0;
-  padding: 11px 12px 10px 11px;
-}
-.e-pager.e-rtl .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
   padding: 11px 12px 10px 11px;
 }
 .e-pager.e-rtl .e-pp, .e-pager.e-rtl .e-np, .e-pager.e-rtl .e-pp:hover, .e-pager.e-rtl .e-np:hover {
@@ -40333,9 +40309,6 @@ textarea.e-de-cmt-textarea {
 .e-pager .e-numericitem:hover {
   color: #1f496e;
   opacity: 1;
-}
-.e-pager .e-numericitem:hover:not(.e-np):not(.e-pp):not(.e-active) {
-  border-left: 0 solid #ddd;
 }
 .e-pager .e-numericitem:not(.e-active):not(.e-np):not(.e-pp):hover {
   background-color: #f2f4f6;
@@ -41831,7 +41804,6 @@ li.e-separator.e-menu-item.e-excel-separator {
 }
 .e-grid .e-group-animator .e-icon-drag.e-icons {
   margin-left: 8px;
-  margin-right: -8px;
 }
 .e-grid .e-groupdroparea.e-group-animate span.e-drag.e-icons.e-icon-drag {
   cursor: move;
@@ -46087,6 +46059,10 @@ ejs-filemanager {
   opacity: 0.5;
   padding: 6px;
   text-align: center;
+}
+.e-bigger .e-filemanager .e-grid.e-rtl .e-checkbox-wrapper .e-frame,
+.e-filemanager.e-bigger .e-grid.e-rtl .e-checkbox-wrapper .e-frame {
+  margin-right: -10px;
 }
 .e-bigger .e-filemanager .e-large-icons .e-checkbox-wrapper .e-frame,
 .e-filemanager.e-bigger .e-large-icons .e-checkbox-wrapper .e-frame {
@@ -69480,6 +69456,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-bigger.e-schedule .e-month-view .e-m-day {
   font-size: 14px;
 }
+.e-bigger .e-schedule .e-year-view .e-calendar-wrapper .e-month-calendar.e-calendar,
+.e-bigger.e-schedule .e-year-view .e-calendar-wrapper .e-month-calendar.e-calendar {
+  min-width: 306px;
+}
 
 .e-schedule.e-multi-drag .e-vertical-view .e-all-day-appointment-wrapper .e-appointment.e-appointment-border, .e-schedule.e-multi-drag .e-vertical-view .e-all-day-appointment-wrapper .e-appointment:focus {
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -70708,7 +70688,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   border-top: 1px solid #007bff;
 }
 .e-schedule .e-vertical-view .e-previous-timeline {
-  border-top: 1px dotted #007bff;
+  border-top: 1px dashed #007bff;
 }
 .e-schedule .e-vertical-view.e-by-date .e-date-header-wrap table tbody td.e-header-cells {
   border-bottom-width: 1px;
