@@ -49893,6 +49893,10 @@ li.e-separator.e-menu-item.e-excel-separator {
       -ms-user-select: none;
           user-select: none;
 }
+.e-bigger .e-grid .e-dialog.e-popup.e-popup-open > div,
+.e-grid.e-bigger .e-dialog.e-popup.e-popup-open > div {
+  border-radius: 16px;
+}
 .e-bigger .e-grid .e-dialog.e-checkboxfilter,
 .e-bigger .e-grid .e-dialog.e-flmenu,
 .e-grid.e-bigger .e-dialog.e-checkboxfilter,
@@ -51451,6 +51455,9 @@ li.e-separator.e-menu-item.e-excel-separator {
   top: -2px;
   -ms-user-select: auto;
       user-select: auto;
+}
+.e-grid .e-dialog.e-popup.e-popup-open > div {
+  border-radius: 8px;
 }
 .e-grid .e-dialog.e-checkboxfilter,
 .e-grid .e-dialog.e-flmenu {
