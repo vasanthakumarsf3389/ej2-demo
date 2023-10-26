@@ -50,18 +50,18 @@
             </span>
             <span id="performanceTime">Time Taken: 0 ms</span>
         </div>
-        <h4 style="display: inline-block;">Filter Choice Count: </h4>
+        <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
         <input type="text" id="filterchoice">
         <h4 style="display: inline-block;">S.No => Custom Data Count: </h4>
         <input type="text" id="customdata">
-        <h4 style="display: inline-block;">Enable Checkbox filter InfiniteScroll: </h4>
+        <h4 style="display: inline-block;">Enable Checkbox filter InfiniteScroll: </h4> -->
         <!-- virtualization -->
-        <input type="checkbox" tabindex="1" id='dataloadtype'/>
+        <!-- <input type="checkbox" tabindex="1" id='dataloadtype'/>
         <h4 style="display: inline-block;">Checkbox Loading indicator: </h4>
         <input type="text" id='loadingeffect'/>
         <h4 style="display: inline-block;">Filter Type: </h4>
         <input type="text" tabindex="1" id='filterType' />
-        <h3>Once change filter type, filtered value will be cleared.</h3>
+        <h3>Once change filter type, filtered value will be cleared.</h3> -->
         <!-- or mode of data load -->
         <div id="Grid">
         </div>
@@ -111,82 +111,82 @@
         { field: 'FIELD11', headerText: 'DREB', width: 130, textAlign: 'Right' }
     ];
     
-    var choiceDataList = [
-        { text: '10', value: 10 },
-        { text: '20', value: 20 },
-        { text: '25', value: 25 },
-        { text: '50', value: 50 },
-        { text: '333', value: 333 },
-        { text: '1000', value: 1000 }
-    ];
-    var filterChoiceDD = new ej.dropdowns.DropDownList({
-        dataSource: choiceDataList,
-        text: '10',
-        value: 10,
-        fields: { text: 'text', value: 'value' },
-        width: 200
-    });
-    filterChoiceDD.appendTo('#filterchoice');
-    var enableVirtualLoad = new ej.buttons.CheckBox();
-    enableVirtualLoad.checked = true;
-    enableVirtualLoad.appendTo('#dataloadtype');
-    document.getElementById('dataloadtype').onclick = () => {
-    if (enableVirtualLoad.checked) {
-            // grid.filterSettings.enableVirtualization = true;
-            // filterChoiceDD.value = 20;
-            grid.filterSettings.enableInfiniteScrolling = true;
-        } else {
-            // grid.filterSettings.enableVirtualization = false;
-            // filterChoiceDD.value = null;
-            grid.filterSettings.enableInfiniteScrolling = false;
-        }
-        // grid.clearFiltering();
-    };
-    var customDataList = [
-        { text: '100000', value: 100000 },
-        { text: '10000', value: 10000 },
-        { text: '1000', value: 1000 }
-    ];
-    var customDataDD = new ej.dropdowns.DropDownList({
-        dataSource: customDataList,
-        text: '100000',
-        value: 100000,
-        fields: { text: 'text', value: 'value' },
-        width: 200
-    });
-    customDataDD.appendTo('#customdata');
-    var loadingEffectList = [
-        { text: 'Shimmer', value: 'Shimmer' },
-        { text: 'Spinner', value: 'Spinner' }
-    ];
-    var loadingEffectDD = new ej.dropdowns.DropDownList({
-        dataSource: loadingEffectList,
-        text: 'Shimmer',
-        value: 'Shimmer',
-        width: 200,
-        change: function (e) {
-            var dropSelectedValue = e.value;
-            // grid.filterSettings.loadingIndicator = dropSelectedValue;
-            grid.loadingIndicator.indicatorType = dropSelectedValue;
-        }
-    });
-    loadingEffectDD.appendTo('#loadingeffect');
-    var filtertype = [
-        { id: 'CheckBox', type: 'CheckBox' },
-        { id: 'Excel', type: 'Excel' }
-    ];
-    var dropDownFilterType = new ej.dropdowns.DropDownList({
-        dataSource: filtertype,
-        fields: { text: 'type', value: 'id' },
-        value: 'Excel',
-        width: 200,
-        change: function (e) {
-            var dropSelectedValue = e.value;
-            grid.filterSettings.type = dropSelectedValue;
-            grid.clearFiltering();
-        }
-    });
-    dropDownFilterType.appendTo('#filterType');
+    // var choiceDataList = [
+    //     { text: '10', value: 10 },
+    //     { text: '20', value: 20 },
+    //     { text: '25', value: 25 },
+    //     { text: '50', value: 50 },
+    //     { text: '333', value: 333 },
+    //     { text: '1000', value: 1000 }
+    // ];
+    // var filterChoiceDD = new ej.dropdowns.DropDownList({
+    //     dataSource: choiceDataList,
+    //     text: '333',
+    //     value: 333,
+    //     fields: { text: 'text', value: 'value' },
+    //     width: 200
+    // });
+    // filterChoiceDD.appendTo('#filterchoice');
+    // var enableVirtualLoad = new ej.buttons.CheckBox();
+    // enableVirtualLoad.checked = true;
+    // enableVirtualLoad.appendTo('#dataloadtype');
+    // document.getElementById('dataloadtype').onclick = () => {
+    // if (enableVirtualLoad.checked) {
+    //         // grid.filterSettings.enableVirtualization = true;
+    //         // filterChoiceDD.value = 20;
+    //         grid.filterSettings.enableInfiniteScrolling = true;
+    //     } else {
+    //         // grid.filterSettings.enableVirtualization = false;
+    //         // filterChoiceDD.value = null;
+    //         grid.filterSettings.enableInfiniteScrolling = false;
+    //     }
+    //     // grid.clearFiltering();
+    // };
+    // var customDataList = [
+    //     { text: '100000', value: 100000 },
+    //     { text: '10000', value: 10000 },
+    //     { text: '1000', value: 1000 }
+    // ];
+    // var customDataDD = new ej.dropdowns.DropDownList({
+    //     dataSource: customDataList,
+    //     text: '100000',
+    //     value: 100000,
+    //     fields: { text: 'text', value: 'value' },
+    //     width: 200
+    // });
+    // customDataDD.appendTo('#customdata');
+    // var loadingEffectList = [
+    //     { text: 'Shimmer', value: 'Shimmer' },
+    //     { text: 'Spinner', value: 'Spinner' }
+    // ];
+    // var loadingEffectDD = new ej.dropdowns.DropDownList({
+    //     dataSource: loadingEffectList,
+    //     text: 'Shimmer',
+    //     value: 'Shimmer',
+    //     width: 200,
+    //     change: function (e) {
+    //         var dropSelectedValue = e.value;
+    //         // grid.filterSettings.loadingIndicator = dropSelectedValue;
+    //         grid.loadingIndicator.indicatorType = dropSelectedValue;
+    //     }
+    // });
+    // loadingEffectDD.appendTo('#loadingeffect');
+    // var filtertype = [
+    //     { id: 'CheckBox', type: 'CheckBox' },
+    //     { id: 'Excel', type: 'Excel' }
+    // ];
+    // var dropDownFilterType = new ej.dropdowns.DropDownList({
+    //     dataSource: filtertype,
+    //     fields: { text: 'type', value: 'id' },
+    //     value: 'Excel',
+    //     width: 200,
+    //     change: function (e) {
+    //         var dropSelectedValue = e.value;
+    //         grid.filterSettings.type = dropSelectedValue;
+    //         grid.clearFiltering();
+    //     }
+    // });
+    // dropDownFilterType.appendTo('#filterType');
     var data = [];
     genarateData.element.onclick = function () {
         if (!data.length) {
@@ -209,14 +209,14 @@
         //     enableVirtualization: true,
         // },
         filterSettings: {
-            type: dropDownFilterType.value,
-            // type: 'Excel',
+            // type: dropDownFilterType.value,
+            type: 'Excel',
             // type: 'CheckBox',
             // enableVirtualization: true,
             enableInfiniteScrolling: true,
-            // itemsCount: 10
+            itemsCount: 10
         },
-        loadingIndicator: { indicatorType: loadingEffectDD.value },
+        // loadingIndicator: { indicatorType: loadingEffectDD.value },
         height: 450,
         rowHeight: 38,
         pageSettings: { pageSize: 25 },
@@ -231,22 +231,22 @@
         toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
         columns: defaultColumns,
         dataBound: hide,
-        actionBegin: function (args) {
-            if (args.requestType === 'filterchoicerequest') {
-                args.filterChoiceCount = filterChoiceDD.value;
-            }
-            else if (args.requestType === 'filterbeforeopen' && args.columnName === "SNo") {
-                // Assign custom data source to the filter module data source
-                args['filterModel'].options.dataSource = virtualData.slice(0, customDataDD.value);
-                // // Remove filtered field except custom data source field
-                // args['filterModel'].options.filteredColumns = args['filterModel'].options.filteredColumns.filter( function(col: Column) {
-                //     if (col.field == "SNo") {
-                //            return true;
-                //     }
-                //     return false;
-                // });
-            }
-        },
+        // actionBegin: function (args) {
+        //     if (args.requestType === 'filterchoicerequest') {
+        //         args.filterChoiceCount = filterChoiceDD.value;
+        //     }
+        //     else if (args.requestType === 'filterbeforeopen' && args.columnName === "SNo") {
+        //         // Assign custom data source to the filter module data source
+        //         args['filterModel'].options.dataSource = virtualData.slice(0, customDataDD.value);
+        //         // // Remove filtered field except custom data source field
+        //         // args['filterModel'].options.filteredColumns = args['filterModel'].options.filteredColumns.filter( function(col: Column) {
+        //         //     if (col.field == "SNo") {
+        //         //            return true;
+        //         //     }
+        //         //     return false;
+        //         // });
+        //     }
+        // },
     });
     grid.appendTo('#Grid');
     grid.element.classList.contains('');
