@@ -32,9 +32,256 @@
             /* box-shadow: 1px -2px 2px #dee2e6; */
         }
     </style>
+    <!-- overview sample -->
+
+<style>
+    .fabric .empimg{
+       background-color:#0078d6; 
+   }
+   .bootstrap5 .empimg{
+       background-color:#e3165b; 
+   }
+   .highcontrast .empimg{
+       background-color:#ffd939; 
+   }
+   .fluent .empimg{
+       background-color:#106EBE;
+   }
+   _:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-Male::before,
+   _:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-FeMale::before{
+       color: black;
+   }
+   .highcontrast .e-userimg.sf-icon-Male::before,
+   .highcontrast .e-userimg.sf-icon-FeMale::before{       
+       color: black;
+   }
+   .bootstrap .empimg{
+       background-color:#0078d6; 
+   }
+   
+   .tailwind .empimg{
+       background-color:#4f46e5;  
+   }
+   
+   .bootstrap4 .empimg,
+   .bootstrap5 .empimg {
+       background-color:#0078d6; 
+   }
+
+   #Emptext{
+   top: -12px;
+   left: 41px;
+   position: relative;
+   }
+   .empimg{
+   height: 27px;
+   width: 29px;
+   border-radius: 14px;
+   }
+  
+.e-grid.e-rtl #Emptext{
+   top: -12px;
+   left: -41px;
+   position: relative;
+}
+   .e-userimg.sf-icon-Male::before,
+   .e-userimg.sf-icon-FeMale::before{
+       font-size: 13px;
+   }
+   .e-userimg.sf-icon-Male, .e-userimg.sf-icon-FeMale {  
+       margin: 0px 8px;
+       line-height: 26px;
+       color: white; 
+       font-size: 13px;
+   }
+
+   .e-userimg.sf-icon-Male::before{
+       content: '\e700';      
+   }
+   .e-userimg.sf-icon-FeMale::before{
+       content: '\e701';      
+   }
+
+   .highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active {
+       background-color: transparent;
+       color: white;
+   }
+
+   .e-bigger .e-grid .statustxt {
+       position: relative;
+       top: -2px;
+   }
+
+   td.e-rowcell.e-selectionbackground.e-active {
+       background-color: transparent;
+   }
+
+   .e-image {
+       height: 13px;
+       width: 14px;
+   }
+
+   td.e-rowcell .statustxt.e-activecolor {
+       color: #00cc00;
+       position: relative;
+       top: 9px;
+   }
+
+   td.e-rowcell .statustxt.e-inactivecolor {
+       color: #e60000;
+       position: relative;
+       top: 9px;
+   }
+
+   .bootstrap5 td.e-rowcell .statustxt.e-inactivecolor,
+   .bootstrap5 td.e-rowcell .statustxt.e-activecolor {
+       top: 8px;
+   }
+
+   .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+   .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+       position: relative;
+       top: 1.5px;
+   }
+
+   .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+   .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+       top: -0.5px;
+   }
+
+   .bootstrap5 .e-checkboxfiltertext #Trusttext {
+       margin-left: -4px;
+   }
+
+   .statustemp.e-inactivecolor {
+       background-color: #ffd7cc;
+       width: 64px;
+   }
+
+   .statustemp.e-activecolor {
+       background-color: #ccffcc;
+       width: 57px;
+   }
+
+   .statustxt.e-activecolor {
+       color: #00cc00;
+   }
+
+   .statustxt.e-inactivecolor {
+       color: #e60000;
+   }
+
+   .statustemp {
+       position: relative;
+       height: 19px;
+       border-radius: 5px;
+       text-align: center
+   }
+
+   .highcontrast #msg {
+       color: #FFFFFF
+   }
+
+   #msg {
+       font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
+       font-size: 14px;
+       font-weight: 400;
+       opacity: 0.95;
+       color: #333;
+       float: right;
+       margin-top: 3px;
+   }
+
+   @media only screen and (max-width: 370px) {
+       #msg {
+           float: left;
+           margin-top: 3px;
+       }
+       #Grid {
+           margin-top: 36px;
+       }
+   }
+
+   #samplecontainer {
+       padding-top: 5px;
+   }
+
+   #myProgress {
+       position: relative;
+       height: 18px;
+       width: 10em;
+       text-align: left;
+       background-color: white;
+   }
+
+   .highcontrast .e-grid #myProgress {
+       background-color: black;
+   }
+
+   #myBar {
+       position: absolute;
+       width: 10%;
+       height: 100%;
+       background-color: #00b300;
+   }
+
+   #myBar.progressdisable {
+       background-color: #df2222;
+   }
+
+   #pbarlabel {
+       position: relative;
+       left: 10px;
+       line-height: 18px;
+       font-size: 10px;
+       color: white;
+   }
+   .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+       -webkit-text-fill-color: lightgrey;
+       -webkit-text-stroke: 1px lightgrey;
+       font-size: 11px;
+   }
+
+   .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+       background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       -webkit-text-stroke: 1px #ffa600;
+   }
+</style>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
     <script src="./ej2.min.js"></script>
+    <script type="text/x-jsrender" id="progessTemplate">
+        ${progessDetail(data)}
+    </script>
+    
+    <template>
+        <input class="rating">
+    </template>
+    <script type="text/x-jsrender" id="ratingTemplate">
+        ${ratingDetail(data)}
+    </script>
+    
+    <script type="text/x-jsrender" id="empTemplate">
+        ${empDetail(data)}
+    </script>
+    
+    <script type="text/x-jsrender" id="trustTemplate">
+        <img style="width: 31px; height: 24px" src="https://ej2.syncfusion.com/demos/src/grid/images/${Trustworthiness}.png"/>
+        <span id="Trusttext">${Trustworthiness}</span>
+    </script>
+    
+    <script type="text/x-jsrender" id="statusTemplate">
+        ${statusDetail(data)}
+    </script>
+    
+    <script id="coltemplate" type="text/x-template">
+        <div class="image">
+            <img src="https://ej2.syncfusion.com/demos/src/grid/images/Map.png" class="e-image" alt="${Location}"/> &nbsp
+            <span id="locationtext">${Location}</span>
+        </div>
+    </script>
     <script>
         function load() {
             document.body.lastElementChild.remove();
@@ -43,13 +290,13 @@
 </head>
 <body onload="load()">
     <div>
-        <div class="div-button">
+        <!-- <div class="div-button">
             <button id="genarate" class="e-info"> Load 100K Data</button>
             <span id="popup">
                 <span id="gif" class="image"></span>
-            </span>
-            <span id="performanceTime">Time Taken: 0 ms</span>
-        </div>
+            </span> -->
+            <!-- <span id="performanceTime">Time Taken: 0 ms</span> -->
+        <!-- </div> -->
         <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
         <input type="text" id="filterchoice">
         <h4 style="display: inline-block;">S.No => Custom Data Count: </h4>
@@ -67,49 +314,137 @@
         </div>
     </div>
     <script>
-        var date1;
-    var date2;
-    var flag = true;
-    var genarateData = new ej.buttons.Button({}, '#genarate');
-    var defaultColumns = [
-        { type: 'CheckBox' },
-        {
-            field: 'SNo',
-            headerText: 'S.No',
-            width: 140,
-            isPrimaryKey: true,
-            validationRules: { required: true, digits: true }
-        },
-        {
-            field: 'FIELD1',
-            headerText: 'Player Name',
-            width: 140,
-            validationRules: { required: true }
-        },
-        { field: 'FIELD2', headerText: 'Year', width: 120, textAlign: 'Right' },
-        {
-            field: 'FIELD3',
-            headerText: 'Sports',
-            width: 160,
-            textAlign: 'Right',
-            editType: 'dropdownedit',
-            validationRules: { required: true }
-        },
-        {
-            field: 'FIELD4',
-            headerText: 'Country',
-            width: 160,
-            textAlign: 'Right',
-            editType: 'dropdownedit'
-        },
-        { field: 'FIELD5', headerText: 'LGID', width: 120, textAlign: 'Right' },
-        { field: 'FIELD6', headerText: 'GP', width: 120, textAlign: 'Right' },
-        { field: 'FIELD7', headerText: 'GS', width: 120, textAlign: 'Right' },
-        { field: 'FIELD8', headerText: 'Minutes', width: 120, textAlign: 'Right' },
-        { field: 'FIELD9', headerText: 'Points', width: 120, textAlign: 'Right' },
-        { field: 'FIELD10', headerText: 'OREB', width: 130, textAlign: 'Right' },
-        { field: 'FIELD11', headerText: 'DREB', width: 130, textAlign: 'Right' }
-    ];
+
+window.ratingDetail = function (e) {
+        var temp = document.getElementsByTagName("template")[0];
+        var cloneTemplate = temp.content.cloneNode(true);
+        var ratingElement = cloneTemplate.querySelector(".rating");
+        var rating = new ej.inputs.Rating({
+            value: e.Rating,
+            readOnly: true,
+            cssClass: 'custom-rating'
+        });
+        rating.appendTo(ratingElement);
+        return ratingElement.ej2_instances[0].wrapper.outerHTML;
+    };
+    // function queryCellInfo(args) {
+    //     var ratingElement = args.cell.querySelector(".rating");
+    //     if (args.column.field === 'Rating') {
+    //         if (args.column.field === 'Rating') {
+    //             var rating = new ej2_inputs_1.Rating({
+    //                 value: args.data.Rating,
+    //                 readOnly: true,
+    //                 cssClass: 'custom-rating'
+    //             });
+    //             rating.appendTo(ratingElement);
+    //         }
+    //     }
+    // }
+    window.progessDetail = function (e) {
+        var myProgress = document.createElement('div');
+        myProgress.id = 'myProgress';
+        myProgress.className = 'pbar';
+        var myBar = document.createElement('div');
+        myBar.id = 'myBar';
+        myBar.className = 'bar';
+        if (e.Status === 'Inactive') {
+            myBar.classList.add('progressdisable');
+        }
+        if (e.Software <= 20) {
+            e.Software = e.Software + 30;
+        }
+        myBar.style.width = e[e.column.field] + '%';
+        var pbarlabel = document.createElement('div');
+        pbarlabel.id = 'pbarlabel';
+        pbarlabel.className = 'barlabel';
+        pbarlabel.textContent = e.Software + '%';
+        myBar.appendChild(pbarlabel);
+        myProgress.appendChild(myBar);
+        return myProgress.outerHTML;
+    };
+    window.empDetail = function (e) {
+        var div = document.createElement('div');
+        var empImg = document.createElement('div');
+        empImg.className = 'empimg';
+        var span = document.createElement('span');
+        span.className = 'e-userimg';
+        if (e.EmployeeImg === 'usermale') {
+            span.classList.add('sf-icon-Male');
+        }
+        else {
+            span.classList.add('sf-icon-FeMale');
+        }
+        empImg.appendChild(span);
+        var Emptext = document.createElement('span');
+        Emptext.id = 'Emptext';
+        Emptext.textContent = e.Employees;
+        div.appendChild(empImg);
+        div.appendChild(Emptext);
+        return div.outerHTML;
+    };
+    window.statusDetail = function (e) {
+        var div = document.createElement('div');
+        var span = document.createElement('span');
+        if (e.Status === 'Active') {
+            span.className = 'statustxt e-activecolor';
+            span.textContent = 'Active';
+            div.className = 'statustemp e-activecolor';
+        }
+        else {
+            span.className = 'statustxt e-inactivecolor';
+            span.textContent = 'Inactive';
+            div.className = 'statustemp e-inactivecolor';
+        }
+        div.appendChild(span);
+        return div.outerHTML;
+    };
+
+
+
+
+    //     var date1;
+    // var date2;
+    // var flag = true;
+    // var genarateData = new ej.buttons.Button({}, '#genarate');
+    // var defaultColumns = [
+    //     { type: 'CheckBox' },
+    //     {
+    //         field: 'SNo',
+    //         headerText: 'S.No',
+    //         width: 140,
+    //         isPrimaryKey: true,
+    //         validationRules: { required: true, digits: true }
+    //     },
+    //     {
+    //         field: 'FIELD1',
+    //         headerText: 'Player Name',
+    //         width: 140,
+    //         validationRules: { required: true }
+    //     },
+    //     { field: 'FIELD2', headerText: 'Year', width: 120, textAlign: 'Right' },
+    //     {
+    //         field: 'FIELD3',
+    //         headerText: 'Sports',
+    //         width: 160,
+    //         textAlign: 'Right',
+    //         editType: 'dropdownedit',
+    //         validationRules: { required: true }
+    //     },
+    //     {
+    //         field: 'FIELD4',
+    //         headerText: 'Country',
+    //         width: 160,
+    //         textAlign: 'Right',
+    //         editType: 'dropdownedit'
+    //     },
+    //     { field: 'FIELD5', headerText: 'LGID', width: 120, textAlign: 'Right' },
+    //     { field: 'FIELD6', headerText: 'GP', width: 120, textAlign: 'Right' },
+    //     { field: 'FIELD7', headerText: 'GS', width: 120, textAlign: 'Right' },
+    //     { field: 'FIELD8', headerText: 'Minutes', width: 120, textAlign: 'Right' },
+    //     { field: 'FIELD9', headerText: 'Points', width: 120, textAlign: 'Right' },
+    //     { field: 'FIELD10', headerText: 'OREB', width: 130, textAlign: 'Right' },
+    //     { field: 'FIELD11', headerText: 'DREB', width: 130, textAlign: 'Right' }
+    // ];
     
     // var choiceDataList = [
     //     { text: '10', value: 10 },
@@ -187,83 +522,134 @@
     //     }
     // });
     // dropDownFilterType.appendTo('#filterType');
-    var data = [];
-    genarateData.element.onclick = function () {
-        if (!data.length) {
-            show();
-            dataSource();
-            date1 = new Date().getTime();
-            grid.dataSource = data = virtualData;
+    // var data = [];
+    // genarateData.element.onclick = function () {
+    //     if (!data.length) {
+    //         // show();
+    //         dataSource();
+    //         date1 = new Date().getTime();
+    //         grid.dataSource = data = virtualData;
+    //     }
+    // };
+
+    window.getTradeData = function (dataCount) {
+        var employees = [
+            'Michael', 'Kathryn', 'Tamer', 'Martin', 'Davolio', 'Nancy', 'Fuller', 'Leverling', 'Peacock',
+            'Margaret', 'Buchanan', 'Janet', 'Andrew', 'Callahan', 'Laura', 'Dodsworth', 'Anne',
+            'Bergs', 'Vinet', 'Anton', 'Fleet', 'Zachery', 'Van', 'King', 'Jack', 'Rose'
+        ];
+        var designation = ['Manager', 'CFO', 'Designer', 'Developer', 'Program Directory', 'System Analyst', 'Project Lead'];
+        var mail = ['sample.com', 'arpy.com', 'rpy.com', 'mail.com', 'jourrapide.com'];
+        var location = ['UK', 'USA', 'Sweden', 'France', 'Canada', 'Argentina', 'Austria', 'Germany', 'Mexico'];
+        var status = ['Active', 'Inactive'];
+        var trustworthiness = ['Perfect', 'Sufficient', 'Insufficient'];
+        var tradeData = [];
+        var address = ['59 rue de lAbbaye', 'Luisenstr. 48', 'Rua do Paço, 67', '2, rue du Commerce', 'Boulevard Tirou, 255',
+            'Rua do mailPaço, 67', 'Hauptstr. 31', 'Starenweg 5', 'Rua do Mercado, 12',
+            'Carrera 22 con Ave. Carlos Soublette #8-35', 'Kirchgasse 6',
+            'Sierras de Granada 9993', 'Mehrheimerstr. 369', 'Rua da Panificadora, 12', '2817 Milton Dr.', 'Kirchgasse 6',
+            'Åkergatan 24', '24, place Kléber', 'Torikatu 38', 'Berliner Platz 43', '5ª Ave. Los Palos Grandes', '1029 - 12th Ave. S.',
+            'Torikatu 38', 'P.O. Box 555', '2817 Milton Dr.', 'Taucherstraße 10', '59 rue de lAbbaye', 'Via Ludovico il Moro 22',
+            'Avda. Azteca 123', 'Heerstr. 22', 'Berguvsvägen  8', 'Magazinweg 7', 'Berguvsvägen  8', 'Gran Vía, 1', 'Gran Vía, 1',
+            'Carrera 52 con Ave. Bolívar #65-98 Llano Largo', 'Magazinweg 7', 'Taucherstraße 10', 'Taucherstraße 10',
+            'Av. Copacabana, 267', 'Strada Provinciale 124', 'Fauntleroy Circus', 'Av. dos Lusíadas, 23',
+            'Rua da Panificadora, 12', 'Av. Inês de Castro, 414', 'Avda. Azteca 123', '2817 Milton Dr.'];
+        var employeeimg = ['usermale', 'userfemale'];
+        if (typeof dataCount === 'string') {
+            dataCount = parseInt(dataCount, 10);
         }
-    };
+        for (var i = 1; i <= dataCount; i++) {
+            var code = 10000;
+            tradeData.push({
+                'EmployeeID': code + i,
+                'Employees': employees[Math.floor(Math.random() * employees.length)] + ' ' + employees[Math.floor(Math.random() * employees.length)],
+                'Designation': designation[Math.floor(Math.random() * designation.length)],
+                'Location': location[Math.floor(Math.random() * location.length)],
+                'Status': status[Math.floor(Math.random() * status.length)],
+                'Trustworthiness': trustworthiness[Math.floor(Math.random() * trustworthiness.length)],
+                'Rating': Math.floor(Math.random() * 5),
+                'Software': Math.floor(Math.random() * 100),
+                'EmployeeImg': employeeimg[Math.floor(Math.random() * employeeimg.length)],
+                'CurrentSalary': Math.floor((Math.random() * 100000)),
+                'Address': address[Math.floor(Math.random() * address.length)],
+            });
+            var employee = 'Employees';
+            var emp = tradeData[i - 1][employee];
+            var sName = emp.substr(0, emp.indexOf(' ')).toLowerCase();
+            var empmail = 'Mail';
+            tradeData[i - 1][empmail] = sName + (Math.floor(Math.random() * 100) + 10) + '@' + mail[Math.floor(Math.random() * mail.length)];
+        }
+        return tradeData;
+    }
     var grid = new ej.grids.Grid({
-        dataSource: [],
-        enableVirtualization: true,
-        autoFit: true,
-        enableColumnVirtualization: true,
+        dataSource: window.getTradeData(100000),
         allowFiltering: true,
-        allowSorting: true,
-        // filterSettings: {
-        //     type: dropDownFilterType.value,
-        //     loadingIndicator: loadingEffectDD.value,
-        //     enableVirtualization: true,
-        // },
+        enableInfiniteScrolling: true,
+        infiniteScrollSettings: { enableCache: true },
         filterSettings: {
-            // type: dropDownFilterType.value,
             type: 'Excel',
-            // type: 'CheckBox',
-            // enableVirtualization: true,
             enableInfiniteScrolling: true,
             itemsCount: 10
         },
-        // loadingIndicator: { indicatorType: loadingEffectDD.value },
+        selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
+        enableHover: false,
+        enableHeaderFocus: true,
         height: 450,
         rowHeight: 38,
-        pageSettings: { pageSize: 25 },
-        // width: 630,
-        editSettings: {
-            allowEditing: true,
-            allowAdding: true,
-            allowDeleting: true,
-            mode: 'Normal',
-            newRowPosition: 'Bottom'
-        },
-        toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
-        columns: defaultColumns,
-        dataBound: hide,
-        // actionBegin: function (args) {
-        //     if (args.requestType === 'filterchoicerequest') {
-        //         args.filterChoiceCount = filterChoiceDD.value;
-        //     }
-        //     else if (args.requestType === 'filterbeforeopen' && args.columnName === "SNo") {
-        //         // Assign custom data source to the filter module data source
-        //         args['filterModel'].options.dataSource = virtualData.slice(0, customDataDD.value);
-        //         // // Remove filtered field except custom data source field
-        //         // args['filterModel'].options.filteredColumns = args['filterModel'].options.filteredColumns.filter( function(col: Column) {
-        //         //     if (col.field == "SNo") {
-        //         //            return true;
-        //         //     }
-        //         //     return false;
-        //         // });
-        //     }
-        // },
+        columns: [
+            { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
+            { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '130' },
+            {
+                field: 'Employees', headerText: 'Employee Name', width: '200', clipMode: 'EllipsisWithTooltip',
+                template: '#empTemplate',
+            },
+            {
+                field: 'Designation', headerText: 'Designation', width: '170',
+                clipMode: 'EllipsisWithTooltip'
+            },
+            { field: 'Mail', headerText: 'Mail', width: '230' },
+            {
+                field: 'Location', width: '140', headerText: 'Location',
+                template: '#coltemplate'
+            },
+            {
+                field: 'Status', headerText: 'Status',
+                width: '150', template: '#statusTemplate'
+            },
+            {
+                field: 'Trustworthiness', headerText: 'Trustworthiness',
+                width: '160', template: '#trustTemplate'
+            },
+            {
+                field: 'Rating', headerText: 'Rating',
+                width: '160', template: '#ratingTemplate'
+            },
+            {
+                field: 'Software', allowFiltering: false, allowSorting: false, headerText: 'Software Proficiency',
+                width: '180', template: '#progessTemplate'
+            },
+            {
+                field: 'CurrentSalary', headerText: 'Current Salary', format: 'C2',
+                textAlign: 'Right', width: '160'
+            },
+        ],
     });
     grid.appendTo('#Grid');
-    grid.element.classList.contains('');
-    function show() {
-        document.getElementById('popup').style.display = 'inline-block';
-    }
-    function hide() {
-        if (flag && date1) {
-            var date2_1 = new Date().getTime();
-            document.getElementById('performanceTime').innerHTML =
-                'Time Taken: ' + (date2_1 - date1) + 'ms';
-            grid.editSettings.allowAdding = true;
-            flag = false;
-            genarateData.disabled = true;
-        }
-        document.getElementById('popup').style.display = 'none';
-    }
+    // grid.element.classList.contains('');
+    // function show() {
+    //     document.getElementById('popup').style.display = 'inline-block';
+    // }
+    // function hide() {
+    //     if (flag && date1) {
+    //         var date2_1 = new Date().getTime();
+    //         document.getElementById('performanceTime').innerHTML =
+    //             'Time Taken: ' + (date2_1 - date1) + 'ms';
+    //         grid.editSettings.allowAdding = true;
+    //         flag = false;
+    //         genarateData.disabled = true;
+    //     }
+    //     document.getElementById('popup').style.display = 'none';
+    // }
     </script>
 </body>
 </html>
