@@ -598,16 +598,17 @@ window.ratingDetail = function (e) {
         // rowHeight: 38,
         columns: [
             // { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
-            { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '130' },
+            { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '150' },
             {
-                field: 'Employees', headerText: 'Employee Name', width: '200', clipMode: 'EllipsisWithTooltip',
-                template: '#empTemplate',
+                field: 'Employees', headerText: 'Employee Name', width: '150'
+                // , clipMode: 'EllipsisWithTooltip',
+                // template: '#empTemplate',
             },
             {
-                field: 'Designation', headerText: 'Designation', width: '170',
-                clipMode: 'EllipsisWithTooltip'
+                field: 'Designation', headerText: 'Designation', width: '150',
+                // clipMode: 'EllipsisWithTooltip'
             },
-            { field: 'Mail', headerText: 'Mail', width: '230' },
+            { field: 'Mail', headerText: 'Mail', width: '150' },
             // {
             //     field: 'Location', width: '140', headerText: 'Location',
             //     template: '#coltemplate'
@@ -630,7 +631,8 @@ window.ratingDetail = function (e) {
             // },
             {
                 field: 'CurrentSalary', headerText: 'Current Salary', format: 'C2',
-                textAlign: 'Right', width: '160'
+                // textAlign: 'Right',
+                width: '150'
             },
         ],
     });
