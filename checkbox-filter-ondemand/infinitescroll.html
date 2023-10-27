@@ -585,19 +585,19 @@ window.ratingDetail = function (e) {
         dataSource: window.getTradeData(100000),
         allowFiltering: true,
         enableInfiniteScrolling: true,
-        infiniteScrollSettings: { enableCache: true },
+        // infiniteScrollSettings: { enableCache: true },
         filterSettings: {
             type: 'Excel',
             enableInfiniteScrolling: true,
             // itemsCount: 50
         },
         selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
-        enableHover: false,
-        enableHeaderFocus: true,
+        // enableHover: false,
+        // enableHeaderFocus: true,
         height: 450,
-        rowHeight: 38,
+        // rowHeight: 38,
         columns: [
-            { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
+            // { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
             { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '130' },
             {
                 field: 'Employees', headerText: 'Employee Name', width: '200', clipMode: 'EllipsisWithTooltip',
@@ -608,26 +608,26 @@ window.ratingDetail = function (e) {
                 clipMode: 'EllipsisWithTooltip'
             },
             { field: 'Mail', headerText: 'Mail', width: '230' },
-            {
-                field: 'Location', width: '140', headerText: 'Location',
-                template: '#coltemplate'
-            },
-            {
-                field: 'Status', headerText: 'Status',
-                width: '150', template: '#statusTemplate'
-            },
-            {
-                field: 'Trustworthiness', headerText: 'Trustworthiness',
-                width: '160', template: '#trustTemplate'
-            },
-            {
-                field: 'Rating', headerText: 'Rating',
-                width: '160', template: '#ratingTemplate'
-            },
-            {
-                field: 'Software', allowFiltering: false, allowSorting: false, headerText: 'Software Proficiency',
-                width: '180', template: '#progessTemplate'
-            },
+            // {
+            //     field: 'Location', width: '140', headerText: 'Location',
+            //     template: '#coltemplate'
+            // },
+            // {
+            //     field: 'Status', headerText: 'Status',
+            //     width: '150', template: '#statusTemplate'
+            // },
+            // {
+            //     field: 'Trustworthiness', headerText: 'Trustworthiness',
+            //     width: '160', template: '#trustTemplate'
+            // },
+            // {
+            //     field: 'Rating', headerText: 'Rating',
+            //     width: '160', template: '#ratingTemplate'
+            // },
+            // {
+            //     field: 'Software', allowFiltering: false, allowSorting: false, headerText: 'Software Proficiency',
+            //     width: '180', template: '#progessTemplate'
+            // },
             {
                 field: 'CurrentSalary', headerText: 'Current Salary', format: 'C2',
                 textAlign: 'Right', width: '160'
