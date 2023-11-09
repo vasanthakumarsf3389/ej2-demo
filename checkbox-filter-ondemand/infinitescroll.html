@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckBox/Excel Filter On Demand Virtual Scroll</title>
+    <script src="../customdata.js"></script>
     <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
     <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet">
@@ -310,11 +311,32 @@
         <input type="text" tabindex="1" id='filterType' />
         <h3>Once change filter type, filtered value will be cleared.</h3> -->
         <!-- or mode of data load -->
+        <div>
+            <select id="ddl">
+                     <option value="301">301 Rows and 5 Columns</option>
+                     <option value="1000">1,000 Rows and 5 Columns</option>
+                     <option value="10000">10,000 Rows and 5 Columns</option>
+                     <option value="100000">1,00,000 Rows and 5 Columns</option>
+            </select>
+            <span id="msg"></span>
+            <br>
+        </div>
         <div id="Grid">
         </div>
     </div>
     <script>
-
+        var dReady = false;
+    var dtTime = false;
+    var isDataBound = false;
+    var isDataChanged = true;
+    var intervalFun;
+    var clrIntervalFun;
+    var clrIntervalFun1;
+    var clrIntervalFun2;
+    var ddObj;
+    var dropSlectedIndex = null;
+    var stTime;
+    stTime = performance.now();
 window.ratingDetail = function (e) {
         var temp = document.getElementsByTagName("template")[0];
         var cloneTemplate = temp.content.cloneNode(true);
@@ -398,53 +420,6 @@ window.ratingDetail = function (e) {
         div.appendChild(span);
         return div.outerHTML;
     };
-
-
-
-
-    //     var date1;
-    // var date2;
-    // var flag = true;
-    // var genarateData = new ej.buttons.Button({}, '#genarate');
-    // var defaultColumns = [
-    //     { type: 'CheckBox' },
-    //     {
-    //         field: 'SNo',
-    //         headerText: 'S.No',
-    //         width: 140,
-    //         isPrimaryKey: true,
-    //         validationRules: { required: true, digits: true }
-    //     },
-    //     {
-    //         field: 'FIELD1',
-    //         headerText: 'Player Name',
-    //         width: 140,
-    //         validationRules: { required: true }
-    //     },
-    //     { field: 'FIELD2', headerText: 'Year', width: 120, textAlign: 'Right' },
-    //     {
-    //         field: 'FIELD3',
-    //         headerText: 'Sports',
-    //         width: 160,
-    //         textAlign: 'Right',
-    //         editType: 'dropdownedit',
-    //         validationRules: { required: true }
-    //     },
-    //     {
-    //         field: 'FIELD4',
-    //         headerText: 'Country',
-    //         width: 160,
-    //         textAlign: 'Right',
-    //         editType: 'dropdownedit'
-    //     },
-    //     { field: 'FIELD5', headerText: 'LGID', width: 120, textAlign: 'Right' },
-    //     { field: 'FIELD6', headerText: 'GP', width: 120, textAlign: 'Right' },
-    //     { field: 'FIELD7', headerText: 'GS', width: 120, textAlign: 'Right' },
-    //     { field: 'FIELD8', headerText: 'Minutes', width: 120, textAlign: 'Right' },
-    //     { field: 'FIELD9', headerText: 'Points', width: 120, textAlign: 'Right' },
-    //     { field: 'FIELD10', headerText: 'OREB', width: 130, textAlign: 'Right' },
-    //     { field: 'FIELD11', headerText: 'DREB', width: 130, textAlign: 'Right' }
-    // ];
     
     // var choiceDataList = [
     //     { text: '10', value: 10 },
@@ -531,55 +506,10 @@ window.ratingDetail = function (e) {
     //         grid.dataSource = data = virtualData;
     //     }
     // };
-
-    window.getTradeData = function (dataCount) {
-        var employees = [
-            'Michael', 'Kathryn', 'Tamer', 'Martin', 'Davolio', 'Nancy', 'Fuller', 'Leverling', 'Peacock',
-            'Margaret', 'Buchanan', 'Janet', 'Andrew', 'Callahan', 'Laura', 'Dodsworth', 'Anne',
-            'Bergs', 'Vinet', 'Anton', 'Fleet', 'Zachery', 'Van', 'King', 'Jack', 'Rose'
-        ];
-        var designation = ['Manager', 'CFO', 'Designer', 'Developer', 'Program Directory', 'System Analyst', 'Project Lead'];
-        var mail = ['sample.com', 'arpy.com', 'rpy.com', 'mail.com', 'jourrapide.com'];
-        var location = ['UK', 'USA', 'Sweden', 'France', 'Canada', 'Argentina', 'Austria', 'Germany', 'Mexico'];
-        var status = ['Active', 'Inactive'];
-        var trustworthiness = ['Perfect', 'Sufficient', 'Insufficient'];
-        var tradeData = [];
-        var address = ['59 rue de lAbbaye', 'Luisenstr. 48', 'Rua do Paço, 67', '2, rue du Commerce', 'Boulevard Tirou, 255',
-            'Rua do mailPaço, 67', 'Hauptstr. 31', 'Starenweg 5', 'Rua do Mercado, 12',
-            'Carrera 22 con Ave. Carlos Soublette #8-35', 'Kirchgasse 6',
-            'Sierras de Granada 9993', 'Mehrheimerstr. 369', 'Rua da Panificadora, 12', '2817 Milton Dr.', 'Kirchgasse 6',
-            'Åkergatan 24', '24, place Kléber', 'Torikatu 38', 'Berliner Platz 43', '5ª Ave. Los Palos Grandes', '1029 - 12th Ave. S.',
-            'Torikatu 38', 'P.O. Box 555', '2817 Milton Dr.', 'Taucherstraße 10', '59 rue de lAbbaye', 'Via Ludovico il Moro 22',
-            'Avda. Azteca 123', 'Heerstr. 22', 'Berguvsvägen  8', 'Magazinweg 7', 'Berguvsvägen  8', 'Gran Vía, 1', 'Gran Vía, 1',
-            'Carrera 52 con Ave. Bolívar #65-98 Llano Largo', 'Magazinweg 7', 'Taucherstraße 10', 'Taucherstraße 10',
-            'Av. Copacabana, 267', 'Strada Provinciale 124', 'Fauntleroy Circus', 'Av. dos Lusíadas, 23',
-            'Rua da Panificadora, 12', 'Av. Inês de Castro, 414', 'Avda. Azteca 123', '2817 Milton Dr.'];
-        var employeeimg = ['usermale', 'userfemale'];
-        if (typeof dataCount === 'string') {
-            dataCount = parseInt(dataCount, 10);
-        }
-        for (var i = 1; i <= dataCount; i++) {
-            var code = 10000;
-            tradeData.push({
-                'EmployeeID': code + i,
-                'Employees': employees[Math.floor(Math.random() * employees.length)] + ' ' + employees[Math.floor(Math.random() * employees.length)],
-                'Designation': designation[Math.floor(Math.random() * designation.length)],
-                'Location': location[Math.floor(Math.random() * location.length)],
-                'Status': status[Math.floor(Math.random() * status.length)],
-                'Trustworthiness': trustworthiness[Math.floor(Math.random() * trustworthiness.length)],
-                'Rating': Math.floor(Math.random() * 5),
-                'Software': Math.floor(Math.random() * 100),
-                'EmployeeImg': employeeimg[Math.floor(Math.random() * employeeimg.length)],
-                'CurrentSalary': Math.floor((Math.random() * 100000)),
-                'Address': address[Math.floor(Math.random() * address.length)],
-            });
-            var employee = 'Employees';
-            var emp = tradeData[i - 1][employee];
-            var sName = emp.substr(0, emp.indexOf(' ')).toLowerCase();
-            var empmail = 'Mail';
-            tradeData[i - 1][empmail] = sName + (Math.floor(Math.random() * 100) + 10) + '@' + mail[Math.floor(Math.random() * mail.length)];
-        }
-        return tradeData;
+    function startTimer(args) {
+        clearTimeout(clrIntervalFun);
+        clearInterval(intervalFun);
+        dtTime = true;
     }
     var grid = new ej.grids.Grid({
         dataSource: window.getTradeData(100000),
@@ -635,23 +565,50 @@ window.ratingDetail = function (e) {
                 width: '150'
             },
         ],
+        dataBound: startTimer,
+        actionBegin: function (args) {
+        },
     });
     grid.appendTo('#Grid');
-    // grid.element.classList.contains('');
-    // function show() {
-    //     document.getElementById('popup').style.display = 'inline-block';
-    // }
-    // function hide() {
-    //     if (flag && date1) {
-    //         var date2_1 = new Date().getTime();
-    //         document.getElementById('performanceTime').innerHTML =
-    //             'Time Taken: ' + (date2_1 - date1) + 'ms';
-    //         grid.editSettings.allowAdding = true;
-    //         flag = false;
-    //         genarateData.disabled = true;
+    grid.on('data-ready', function () {
+        dReady = true;
+    });
+    var listObj = new ej.dropdowns.DropDownList({
+        index: 3,
+        placeholder: 'Select a Data Range',
+        popupHeight: '240px',
+        width: '220px',
+        change: function () { valueChange(); }
+    });
+    listObj.appendTo('#ddl');
+    function valueChange() {
+        listObj.closePopup();
+        dropSlectedIndex = null;
+        var index = listObj.value;
+        clearTimeout(clrIntervalFun2);
+        clrIntervalFun2 = setTimeout(function () {
+            isDataChanged = true;
+            stTime = null;
+            var contentElement = grid.contentModule.getPanel().firstChild;
+            contentElement.scrollLeft = 0;
+            contentElement.scrollTop = 0;
+            grid.pageSettings.currentPage = 1;
+            stTime = performance.now();
+            grid.dataSource = window.getTradeData(index);
+        }, 100);
+    }
+    // document.getElementById('Grid').addEventListener('DOMSubtreeModified', function () {
+    //     if (dReady && stTime && isDataChanged) {
+    //         var msgEle = document.getElementById('msg');
+    //         var val = (performance.now() - stTime).toFixed(0);
+    //         stTime = null;
+    //         dtTime = false;
+    //         dReady = false;
+    //         isDataChanged = false;
+    //         msgEle.innerHTML = 'Load Time: ' + '<b>' + val + '</b>' + '<b>ms</b>';
+    //         msgEle.classList.remove('e-hide');
     //     }
-    //     document.getElementById('popup').style.display = 'none';
-    // }
+    // });
     </script>
 </body>
 </html>
