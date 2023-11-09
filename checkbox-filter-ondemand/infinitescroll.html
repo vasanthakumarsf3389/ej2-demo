@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckBox/Excel Filter On Demand Virtual Scroll</title>
+    <link href="https://cdn.syncfusion.com/ej2/23.1.44/material.css" class="theme-primary" rel="stylesheet" />
     <script src="../customdata.js"></script>
-    <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script>
+    <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js"
+        type="text/javascript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
-    <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet">
+    <!-- <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet"> -->
     <style>
         /* .e-excelfilter .e-virtual-list {
             margin-top: 0;
@@ -35,248 +38,263 @@
     </style>
     <!-- overview sample -->
 
-<style>
-    .fabric .empimg{
-       background-color:#0078d6; 
-   }
-   .bootstrap5 .empimg{
-       background-color:#e3165b; 
-   }
-   .highcontrast .empimg{
-       background-color:#ffd939; 
-   }
-   .fluent .empimg{
-       background-color:#106EBE;
-   }
-   _:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-Male::before,
-   _:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-FeMale::before{
-       color: black;
-   }
-   .highcontrast .e-userimg.sf-icon-Male::before,
-   .highcontrast .e-userimg.sf-icon-FeMale::before{       
-       color: black;
-   }
-   .bootstrap .empimg{
-       background-color:#0078d6; 
-   }
-   
-   .tailwind .empimg{
-       background-color:#4f46e5;  
-   }
-   
-   .bootstrap4 .empimg,
-   .bootstrap5 .empimg {
-       background-color:#0078d6; 
-   }
+    <style>
+        .fabric .empimg {
+            background-color: #0078d6;
+        }
 
-   #Emptext{
-   top: -12px;
-   left: 41px;
-   position: relative;
-   }
-   .empimg{
-   height: 27px;
-   width: 29px;
-   border-radius: 14px;
-   }
-  
-.e-grid.e-rtl #Emptext{
-   top: -12px;
-   left: -41px;
-   position: relative;
-}
-   .e-userimg.sf-icon-Male::before,
-   .e-userimg.sf-icon-FeMale::before{
-       font-size: 13px;
-   }
-   .e-userimg.sf-icon-Male, .e-userimg.sf-icon-FeMale {  
-       margin: 0px 8px;
-       line-height: 26px;
-       color: white; 
-       font-size: 13px;
-   }
+        .bootstrap5 .empimg {
+            background-color: #e3165b;
+        }
 
-   .e-userimg.sf-icon-Male::before{
-       content: '\e700';      
-   }
-   .e-userimg.sf-icon-FeMale::before{
-       content: '\e701';      
-   }
+        .highcontrast .empimg {
+            background-color: #ffd939;
+        }
 
-   .highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active {
-       background-color: transparent;
-       color: white;
-   }
+        .fluent .empimg {
+            background-color: #106EBE;
+        }
 
-   .e-bigger .e-grid .statustxt {
-       position: relative;
-       top: -2px;
-   }
+        _:-ms-fullscreen,
+        :root .highcontrast .e-userimg.sf-icon-Male::before,
+        _:-ms-fullscreen,
+        :root .highcontrast .e-userimg.sf-icon-FeMale::before {
+            color: black;
+        }
 
-   td.e-rowcell.e-selectionbackground.e-active {
-       background-color: transparent;
-   }
+        .highcontrast .e-userimg.sf-icon-Male::before,
+        .highcontrast .e-userimg.sf-icon-FeMale::before {
+            color: black;
+        }
 
-   .e-image {
-       height: 13px;
-       width: 14px;
-   }
+        .bootstrap .empimg {
+            background-color: #0078d6;
+        }
 
-   td.e-rowcell .statustxt.e-activecolor {
-       color: #00cc00;
-       position: relative;
-       top: 9px;
-   }
+        .tailwind .empimg {
+            background-color: #4f46e5;
+        }
 
-   td.e-rowcell .statustxt.e-inactivecolor {
-       color: #e60000;
-       position: relative;
-       top: 9px;
-   }
+        .bootstrap4 .empimg,
+        .bootstrap5 .empimg {
+            background-color: #0078d6;
+        }
 
-   .bootstrap5 td.e-rowcell .statustxt.e-inactivecolor,
-   .bootstrap5 td.e-rowcell .statustxt.e-activecolor {
-       top: 8px;
-   }
+        #Emptext {
+            top: -12px;
+            left: 41px;
+            position: relative;
+        }
 
-   .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
-   .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
-       position: relative;
-       top: 1.5px;
-   }
+        .empimg {
+            height: 27px;
+            width: 29px;
+            border-radius: 14px;
+        }
 
-   .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
-   .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
-       top: -0.5px;
-   }
+        .e-grid.e-rtl #Emptext {
+            top: -12px;
+            left: -41px;
+            position: relative;
+        }
 
-   .bootstrap5 .e-checkboxfiltertext #Trusttext {
-       margin-left: -4px;
-   }
+        .e-userimg.sf-icon-Male::before,
+        .e-userimg.sf-icon-FeMale::before {
+            font-size: 13px;
+        }
 
-   .statustemp.e-inactivecolor {
-       background-color: #ffd7cc;
-       width: 64px;
-   }
+        .e-userimg.sf-icon-Male,
+        .e-userimg.sf-icon-FeMale {
+            margin: 0px 8px;
+            line-height: 26px;
+            color: white;
+            font-size: 13px;
+        }
 
-   .statustemp.e-activecolor {
-       background-color: #ccffcc;
-       width: 57px;
-   }
+        .e-userimg.sf-icon-Male::before {
+            content: '\e700';
+        }
 
-   .statustxt.e-activecolor {
-       color: #00cc00;
-   }
+        .e-userimg.sf-icon-FeMale::before {
+            content: '\e701';
+        }
 
-   .statustxt.e-inactivecolor {
-       color: #e60000;
-   }
+        .highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active {
+            background-color: transparent;
+            color: white;
+        }
 
-   .statustemp {
-       position: relative;
-       height: 19px;
-       border-radius: 5px;
-       text-align: center
-   }
+        .e-bigger .e-grid .statustxt {
+            position: relative;
+            top: -2px;
+        }
 
-   .highcontrast #msg {
-       color: #FFFFFF
-   }
+        td.e-rowcell.e-selectionbackground.e-active {
+            background-color: transparent;
+        }
 
-   #msg {
-       font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
-       font-size: 14px;
-       font-weight: 400;
-       opacity: 0.95;
-       color: #333;
-       float: right;
-       margin-top: 3px;
-   }
+        .e-image {
+            height: 13px;
+            width: 14px;
+        }
 
-   @media only screen and (max-width: 370px) {
-       #msg {
-           float: left;
-           margin-top: 3px;
-       }
-       #Grid {
-           margin-top: 36px;
-       }
-   }
+        td.e-rowcell .statustxt.e-activecolor {
+            color: #00cc00;
+            position: relative;
+            top: 9px;
+        }
 
-   #samplecontainer {
-       padding-top: 5px;
-   }
+        td.e-rowcell .statustxt.e-inactivecolor {
+            color: #e60000;
+            position: relative;
+            top: 9px;
+        }
 
-   #myProgress {
-       position: relative;
-       height: 18px;
-       width: 10em;
-       text-align: left;
-       background-color: white;
-   }
+        .bootstrap5 td.e-rowcell .statustxt.e-inactivecolor,
+        .bootstrap5 td.e-rowcell .statustxt.e-activecolor {
+            top: 8px;
+        }
 
-   .highcontrast .e-grid #myProgress {
-       background-color: black;
-   }
+        .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+        .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+            position: relative;
+            top: 1.5px;
+        }
 
-   #myBar {
-       position: absolute;
-       width: 10%;
-       height: 100%;
-       background-color: #00b300;
-   }
+        .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+        .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+            top: -0.5px;
+        }
 
-   #myBar.progressdisable {
-       background-color: #df2222;
-   }
+        .bootstrap5 .e-checkboxfiltertext #Trusttext {
+            margin-left: -4px;
+        }
 
-   #pbarlabel {
-       position: relative;
-       left: 10px;
-       line-height: 18px;
-       font-size: 10px;
-       color: white;
-   }
-   .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
-       -webkit-text-fill-color: lightgrey;
-       -webkit-text-stroke: 1px lightgrey;
-       font-size: 11px;
-   }
+        .statustemp.e-inactivecolor {
+            background-color: #ffd7cc;
+            width: 64px;
+        }
 
-   .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
-       background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-       -webkit-text-stroke: 1px #ffa600;
-   }
-</style>
+        .statustemp.e-activecolor {
+            background-color: #ccffcc;
+            width: 57px;
+        }
+
+        .statustxt.e-activecolor {
+            color: #00cc00;
+        }
+
+        .statustxt.e-inactivecolor {
+            color: #e60000;
+        }
+
+        .statustemp {
+            position: relative;
+            height: 19px;
+            border-radius: 5px;
+            text-align: center
+        }
+
+        .highcontrast #msg {
+            color: #FFFFFF
+        }
+
+        #msg {
+            font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.95;
+            color: #333;
+            float: right;
+            margin-top: 3px;
+        }
+
+        @media only screen and (max-width: 370px) {
+            #msg {
+                float: left;
+                margin-top: 3px;
+            }
+
+            #Grid {
+                margin-top: 36px;
+            }
+        }
+
+        #samplecontainer {
+            padding-top: 5px;
+        }
+
+        #myProgress {
+            position: relative;
+            height: 18px;
+            width: 10em;
+            text-align: left;
+            background-color: white;
+        }
+
+        .highcontrast .e-grid #myProgress {
+            background-color: black;
+        }
+
+        #myBar {
+            position: absolute;
+            width: 10%;
+            height: 100%;
+            background-color: #00b300;
+        }
+
+        #myBar.progressdisable {
+            background-color: #df2222;
+        }
+
+        #pbarlabel {
+            position: relative;
+            left: 10px;
+            line-height: 18px;
+            font-size: 10px;
+            color: white;
+        }
+
+        .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+            -webkit-text-fill-color: lightgrey;
+            -webkit-text-stroke: 1px lightgrey;
+            font-size: 11px;
+        }
+
+        .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+            background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px #ffa600;
+        }
+    </style>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="./ej2.min.js"></script>
     <script type="text/x-jsrender" id="progessTemplate">
         ${progessDetail(data)}
     </script>
-    
+
     <template>
         <input class="rating">
     </template>
     <script type="text/x-jsrender" id="ratingTemplate">
         ${ratingDetail(data)}
     </script>
-    
+
     <script type="text/x-jsrender" id="empTemplate">
         ${empDetail(data)}
     </script>
-    
+
     <script type="text/x-jsrender" id="trustTemplate">
         <img style="width: 31px; height: 24px" src="https://ej2.syncfusion.com/demos/src/grid/images/${Trustworthiness}.png"/>
         <span id="Trusttext">${Trustworthiness}</span>
     </script>
-    
+
     <script type="text/x-jsrender" id="statusTemplate">
         ${statusDetail(data)}
     </script>
-    
+
     <script id="coltemplate" type="text/x-template">
         <div class="image">
             <img src="https://ej2.syncfusion.com/demos/src/grid/images/Map.png" class="e-image" alt="${Location}"/> &nbsp
@@ -289,326 +307,384 @@
         }
     </script>
 </head>
+
 <body onload="load()">
-    <div>
-        <!-- <div class="div-button">
+    <div style="display: flex;">
+        <div>
+            <div style="padding: 10px; display: inline-block;">
+                <input id="rtlmode" type="checkbox" />
+            </div>
+            <div style="padding: 10px; display: inline-block;">
+                <input id="biggermode" type="checkbox" />
+            </div>
+        </div>
+        <div id="default">
+            <h3 style="display: inline-block;">Themes: </h3>
+            <select id="theme">
+                <option value="material">material</option>
+                <option value="material-dark">material-dark</option>
+                <option value="material3-dark">material3-dark</option>
+                <option value="material3">material3</option>
+                <option value="fluent">fluent</option>
+                <option value="fluent-dark">fluent-dark</option>
+                <option value="bootstrap">bootstrap</option>
+                <option value="bootstrap-dark">bootstrap-dark</option>
+                <option value="bootstrap4">bootstrap4</option>
+                <option value="bootstrap5">bootstrap5</option>
+                <option value="fabric">fabric</option>
+                <option value="fabric-dark">fabric-dark</option>
+                <option value="tailwind">tailwind</option>
+                <option value="highcontrast">highcontrast</option>
+            </select>
+        </div>
+    </div>
+    <!-- <div class="div-button">
             <button id="genarate" class="e-info"> Load 100K Data</button>
             <span id="popup">
                 <span id="gif" class="image"></span>
             </span> -->
-            <!-- <span id="performanceTime">Time Taken: 0 ms</span> -->
-        <!-- </div> -->
-        <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
+    <!-- <span id="performanceTime">Time Taken: 0 ms</span> -->
+    <!-- </div> -->
+    <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
         <input type="text" id="filterchoice">
         <h4 style="display: inline-block;">S.No => Custom Data Count: </h4>
         <input type="text" id="customdata">
         <h4 style="display: inline-block;">Enable Checkbox filter InfiniteScroll: </h4> -->
-        <!-- virtualization -->
-        <!-- <input type="checkbox" tabindex="1" id='dataloadtype'/>
+    <!-- virtualization -->
+    <!-- <input type="checkbox" tabindex="1" id='dataloadtype'/>
         <h4 style="display: inline-block;">Checkbox Loading indicator: </h4>
         <input type="text" id='loadingeffect'/>
         <h4 style="display: inline-block;">Filter Type: </h4>
         <input type="text" tabindex="1" id='filterType' />
         <h3>Once change filter type, filtered value will be cleared.</h3> -->
-        <!-- or mode of data load -->
-        <div>
-            <select id="ddl">
-                     <option value="301">301 Rows and 5 Columns</option>
-                     <option value="1000">1,000 Rows and 5 Columns</option>
-                     <option value="10000">10,000 Rows and 5 Columns</option>
-                     <option value="100000">1,00,000 Rows and 5 Columns</option>
-            </select>
-            <span id="msg"></span>
-            <br>
-        </div>
-        <div id="Grid">
-        </div>
+    <!-- or mode of data load -->
+    <div>
+        <select id="ddl">
+            <option value="301">301 Rows and 5 Columns</option>
+            <option value="1000">1,000 Rows and 5 Columns</option>
+            <option value="10000">10,000 Rows and 5 Columns</option>
+            <option value="100000">1,00,000 Rows and 5 Columns</option>
+        </select>
+        <span id="msg"></span>
+        <br>
+    </div>
+    <div id="Grid">
+    </div>
     </div>
     <script>
         var dReady = false;
-    var dtTime = false;
-    var isDataBound = false;
-    var isDataChanged = true;
-    var intervalFun;
-    var clrIntervalFun;
-    var clrIntervalFun1;
-    var clrIntervalFun2;
-    var ddObj;
-    var dropSlectedIndex = null;
-    var stTime;
-    stTime = performance.now();
-window.ratingDetail = function (e) {
-        var temp = document.getElementsByTagName("template")[0];
-        var cloneTemplate = temp.content.cloneNode(true);
-        var ratingElement = cloneTemplate.querySelector(".rating");
-        var rating = new ej.inputs.Rating({
-            value: e.Rating,
-            readOnly: true,
-            cssClass: 'custom-rating'
-        });
-        rating.appendTo(ratingElement);
-        return ratingElement.ej2_instances[0].wrapper.outerHTML;
-    };
-    // function queryCellInfo(args) {
-    //     var ratingElement = args.cell.querySelector(".rating");
-    //     if (args.column.field === 'Rating') {
-    //         if (args.column.field === 'Rating') {
-    //             var rating = new ej2_inputs_1.Rating({
-    //                 value: args.data.Rating,
-    //                 readOnly: true,
-    //                 cssClass: 'custom-rating'
-    //             });
-    //             rating.appendTo(ratingElement);
-    //         }
-    //     }
-    // }
-    window.progessDetail = function (e) {
-        var myProgress = document.createElement('div');
-        myProgress.id = 'myProgress';
-        myProgress.className = 'pbar';
-        var myBar = document.createElement('div');
-        myBar.id = 'myBar';
-        myBar.className = 'bar';
-        if (e.Status === 'Inactive') {
-            myBar.classList.add('progressdisable');
+        var dtTime = false;
+        var isDataBound = false;
+        var isDataChanged = true;
+        var intervalFun;
+        var clrIntervalFun;
+        var clrIntervalFun1;
+        var clrIntervalFun2;
+        var ddObj;
+        var dropSlectedIndex = null;
+        var stTime;
+        stTime = performance.now();
+        window.ratingDetail = function (e) {
+            var temp = document.getElementsByTagName("template")[0];
+            var cloneTemplate = temp.content.cloneNode(true);
+            var ratingElement = cloneTemplate.querySelector(".rating");
+            var rating = new ej.inputs.Rating({
+                value: e.Rating,
+                readOnly: true,
+                cssClass: 'custom-rating'
+            });
+            rating.appendTo(ratingElement);
+            return ratingElement.ej2_instances[0].wrapper.outerHTML;
+        };
+        // function queryCellInfo(args) {
+        //     var ratingElement = args.cell.querySelector(".rating");
+        //     if (args.column.field === 'Rating') {
+        //         if (args.column.field === 'Rating') {
+        //             var rating = new ej2_inputs_1.Rating({
+        //                 value: args.data.Rating,
+        //                 readOnly: true,
+        //                 cssClass: 'custom-rating'
+        //             });
+        //             rating.appendTo(ratingElement);
+        //         }
+        //     }
+        // }
+        window.progessDetail = function (e) {
+            var myProgress = document.createElement('div');
+            myProgress.id = 'myProgress';
+            myProgress.className = 'pbar';
+            var myBar = document.createElement('div');
+            myBar.id = 'myBar';
+            myBar.className = 'bar';
+            if (e.Status === 'Inactive') {
+                myBar.classList.add('progressdisable');
+            }
+            if (e.Software <= 20) {
+                e.Software = e.Software + 30;
+            }
+            myBar.style.width = e[e.column.field] + '%';
+            var pbarlabel = document.createElement('div');
+            pbarlabel.id = 'pbarlabel';
+            pbarlabel.className = 'barlabel';
+            pbarlabel.textContent = e.Software + '%';
+            myBar.appendChild(pbarlabel);
+            myProgress.appendChild(myBar);
+            return myProgress.outerHTML;
+        };
+        window.empDetail = function (e) {
+            var div = document.createElement('div');
+            var empImg = document.createElement('div');
+            empImg.className = 'empimg';
+            var span = document.createElement('span');
+            span.className = 'e-userimg';
+            if (e.EmployeeImg === 'usermale') {
+                span.classList.add('sf-icon-Male');
+            }
+            else {
+                span.classList.add('sf-icon-FeMale');
+            }
+            empImg.appendChild(span);
+            var Emptext = document.createElement('span');
+            Emptext.id = 'Emptext';
+            Emptext.textContent = e.Employees;
+            div.appendChild(empImg);
+            div.appendChild(Emptext);
+            return div.outerHTML;
+        };
+        window.statusDetail = function (e) {
+            var div = document.createElement('div');
+            var span = document.createElement('span');
+            if (e.Status === 'Active') {
+                span.className = 'statustxt e-activecolor';
+                span.textContent = 'Active';
+                div.className = 'statustemp e-activecolor';
+            }
+            else {
+                span.className = 'statustxt e-inactivecolor';
+                span.textContent = 'Inactive';
+                div.className = 'statustemp e-inactivecolor';
+            }
+            div.appendChild(span);
+            return div.outerHTML;
+        };
+
+        // var choiceDataList = [
+        //     { text: '10', value: 10 },
+        //     { text: '20', value: 20 },
+        //     { text: '25', value: 25 },
+        //     { text: '50', value: 50 },
+        //     { text: '333', value: 333 },
+        //     { text: '1000', value: 1000 }
+        // ];
+        // var filterChoiceDD = new ej.dropdowns.DropDownList({
+        //     dataSource: choiceDataList,
+        //     text: '333',
+        //     value: 333,
+        //     fields: { text: 'text', value: 'value' },
+        //     width: 200
+        // });
+        // filterChoiceDD.appendTo('#filterchoice');
+        // var enableVirtualLoad = new ej.buttons.CheckBox();
+        // enableVirtualLoad.checked = true;
+        // enableVirtualLoad.appendTo('#dataloadtype');
+        // document.getElementById('dataloadtype').onclick = () => {
+        // if (enableVirtualLoad.checked) {
+        //         // grid.filterSettings.enableVirtualization = true;
+        //         // filterChoiceDD.value = 20;
+        //         grid.filterSettings.enableInfiniteScrolling = true;
+        //     } else {
+        //         // grid.filterSettings.enableVirtualization = false;
+        //         // filterChoiceDD.value = null;
+        //         grid.filterSettings.enableInfiniteScrolling = false;
+        //     }
+        //     // grid.clearFiltering();
+        // };
+        // var customDataList = [
+        //     { text: '100000', value: 100000 },
+        //     { text: '10000', value: 10000 },
+        //     { text: '1000', value: 1000 }
+        // ];
+        // var customDataDD = new ej.dropdowns.DropDownList({
+        //     dataSource: customDataList,
+        //     text: '100000',
+        //     value: 100000,
+        //     fields: { text: 'text', value: 'value' },
+        //     width: 200
+        // });
+        // customDataDD.appendTo('#customdata');
+        // var loadingEffectList = [
+        //     { text: 'Shimmer', value: 'Shimmer' },
+        //     { text: 'Spinner', value: 'Spinner' }
+        // ];
+        // var loadingEffectDD = new ej.dropdowns.DropDownList({
+        //     dataSource: loadingEffectList,
+        //     text: 'Shimmer',
+        //     value: 'Shimmer',
+        //     width: 200,
+        //     change: function (e) {
+        //         var dropSelectedValue = e.value;
+        //         // grid.filterSettings.loadingIndicator = dropSelectedValue;
+        //         grid.loadingIndicator.indicatorType = dropSelectedValue;
+        //     }
+        // });
+        // loadingEffectDD.appendTo('#loadingeffect');
+        // var filtertype = [
+        //     { id: 'CheckBox', type: 'CheckBox' },
+        //     { id: 'Excel', type: 'Excel' }
+        // ];
+        // var dropDownFilterType = new ej.dropdowns.DropDownList({
+        //     dataSource: filtertype,
+        //     fields: { text: 'type', value: 'id' },
+        //     value: 'Excel',
+        //     width: 200,
+        //     change: function (e) {
+        //         var dropSelectedValue = e.value;
+        //         grid.filterSettings.type = dropSelectedValue;
+        //         grid.clearFiltering();
+        //     }
+        // });
+        // dropDownFilterType.appendTo('#filterType');
+        // var data = [];
+        // genarateData.element.onclick = function () {
+        //     if (!data.length) {
+        //         // show();
+        //         dataSource();
+        //         date1 = new Date().getTime();
+        //         grid.dataSource = data = virtualData;
+        //     }
+        // };
+        function startTimer(args) {
+            clearTimeout(clrIntervalFun);
+            clearInterval(intervalFun);
+            dtTime = true;
         }
-        if (e.Software <= 20) {
-            e.Software = e.Software + 30;
-        }
-        myBar.style.width = e[e.column.field] + '%';
-        var pbarlabel = document.createElement('div');
-        pbarlabel.id = 'pbarlabel';
-        pbarlabel.className = 'barlabel';
-        pbarlabel.textContent = e.Software + '%';
-        myBar.appendChild(pbarlabel);
-        myProgress.appendChild(myBar);
-        return myProgress.outerHTML;
-    };
-    window.empDetail = function (e) {
-        var div = document.createElement('div');
-        var empImg = document.createElement('div');
-        empImg.className = 'empimg';
-        var span = document.createElement('span');
-        span.className = 'e-userimg';
-        if (e.EmployeeImg === 'usermale') {
-            span.classList.add('sf-icon-Male');
-        }
-        else {
-            span.classList.add('sf-icon-FeMale');
-        }
-        empImg.appendChild(span);
-        var Emptext = document.createElement('span');
-        Emptext.id = 'Emptext';
-        Emptext.textContent = e.Employees;
-        div.appendChild(empImg);
-        div.appendChild(Emptext);
-        return div.outerHTML;
-    };
-    window.statusDetail = function (e) {
-        var div = document.createElement('div');
-        var span = document.createElement('span');
-        if (e.Status === 'Active') {
-            span.className = 'statustxt e-activecolor';
-            span.textContent = 'Active';
-            div.className = 'statustemp e-activecolor';
-        }
-        else {
-            span.className = 'statustxt e-inactivecolor';
-            span.textContent = 'Inactive';
-            div.className = 'statustemp e-inactivecolor';
-        }
-        div.appendChild(span);
-        return div.outerHTML;
-    };
-    
-    // var choiceDataList = [
-    //     { text: '10', value: 10 },
-    //     { text: '20', value: 20 },
-    //     { text: '25', value: 25 },
-    //     { text: '50', value: 50 },
-    //     { text: '333', value: 333 },
-    //     { text: '1000', value: 1000 }
-    // ];
-    // var filterChoiceDD = new ej.dropdowns.DropDownList({
-    //     dataSource: choiceDataList,
-    //     text: '333',
-    //     value: 333,
-    //     fields: { text: 'text', value: 'value' },
-    //     width: 200
-    // });
-    // filterChoiceDD.appendTo('#filterchoice');
-    // var enableVirtualLoad = new ej.buttons.CheckBox();
-    // enableVirtualLoad.checked = true;
-    // enableVirtualLoad.appendTo('#dataloadtype');
-    // document.getElementById('dataloadtype').onclick = () => {
-    // if (enableVirtualLoad.checked) {
-    //         // grid.filterSettings.enableVirtualization = true;
-    //         // filterChoiceDD.value = 20;
-    //         grid.filterSettings.enableInfiniteScrolling = true;
-    //     } else {
-    //         // grid.filterSettings.enableVirtualization = false;
-    //         // filterChoiceDD.value = null;
-    //         grid.filterSettings.enableInfiniteScrolling = false;
-    //     }
-    //     // grid.clearFiltering();
-    // };
-    // var customDataList = [
-    //     { text: '100000', value: 100000 },
-    //     { text: '10000', value: 10000 },
-    //     { text: '1000', value: 1000 }
-    // ];
-    // var customDataDD = new ej.dropdowns.DropDownList({
-    //     dataSource: customDataList,
-    //     text: '100000',
-    //     value: 100000,
-    //     fields: { text: 'text', value: 'value' },
-    //     width: 200
-    // });
-    // customDataDD.appendTo('#customdata');
-    // var loadingEffectList = [
-    //     { text: 'Shimmer', value: 'Shimmer' },
-    //     { text: 'Spinner', value: 'Spinner' }
-    // ];
-    // var loadingEffectDD = new ej.dropdowns.DropDownList({
-    //     dataSource: loadingEffectList,
-    //     text: 'Shimmer',
-    //     value: 'Shimmer',
-    //     width: 200,
-    //     change: function (e) {
-    //         var dropSelectedValue = e.value;
-    //         // grid.filterSettings.loadingIndicator = dropSelectedValue;
-    //         grid.loadingIndicator.indicatorType = dropSelectedValue;
-    //     }
-    // });
-    // loadingEffectDD.appendTo('#loadingeffect');
-    // var filtertype = [
-    //     { id: 'CheckBox', type: 'CheckBox' },
-    //     { id: 'Excel', type: 'Excel' }
-    // ];
-    // var dropDownFilterType = new ej.dropdowns.DropDownList({
-    //     dataSource: filtertype,
-    //     fields: { text: 'type', value: 'id' },
-    //     value: 'Excel',
-    //     width: 200,
-    //     change: function (e) {
-    //         var dropSelectedValue = e.value;
-    //         grid.filterSettings.type = dropSelectedValue;
-    //         grid.clearFiltering();
-    //     }
-    // });
-    // dropDownFilterType.appendTo('#filterType');
-    // var data = [];
-    // genarateData.element.onclick = function () {
-    //     if (!data.length) {
-    //         // show();
-    //         dataSource();
-    //         date1 = new Date().getTime();
-    //         grid.dataSource = data = virtualData;
-    //     }
-    // };
-    function startTimer(args) {
-        clearTimeout(clrIntervalFun);
-        clearInterval(intervalFun);
-        dtTime = true;
-    }
-    var grid = new ej.grids.Grid({
-        dataSource: window.getTradeData(100000),
-        allowFiltering: true,
-        enableInfiniteScrolling: true,
-        // infiniteScrollSettings: { enableCache: true },
-        filterSettings: {
-            type: 'Excel',
+        var grid = new ej.grids.Grid({
+            dataSource: window.getTradeData(100000),
+            allowFiltering: true,
             enableInfiniteScrolling: true,
-            // itemsCount: 50
-        },
-        selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
-        // enableHover: false,
-        // enableHeaderFocus: true,
-        height: 450,
-        // rowHeight: 38,
-        columns: [
-            // { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
-            { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '150' },
-            {
-                field: 'Employees', headerText: 'Employee Name', width: '150'
-                // , clipMode: 'EllipsisWithTooltip',
-                // template: '#empTemplate',
+            // infiniteScrollSettings: { enableCache: true },
+            filterSettings: {
+                type: 'Excel',
+                enableInfiniteScrolling: true,
+                // itemsCount: 50
             },
-            {
-                field: 'Designation', headerText: 'Designation', width: '150',
-                // clipMode: 'EllipsisWithTooltip'
+            selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
+            // enableHover: false,
+            // enableHeaderFocus: true,
+            height: 450,
+            // rowHeight: 38,
+            columns: [
+                // { type: 'checkbox', allowFiltering: false, allowSorting: false, width: '60' },
+                { field: 'EmployeeID', headerText: 'Employee ID', isPrimaryKey: true, width: '150' },
+                {
+                    field: 'Employees', headerText: 'Employee Name', width: '150'
+                    // , clipMode: 'EllipsisWithTooltip',
+                    // template: '#empTemplate',
+                },
+                {
+                    field: 'Designation', headerText: 'Designation', width: '150',
+                    // clipMode: 'EllipsisWithTooltip'
+                },
+                { field: 'Mail', headerText: 'Mail', width: '150' },
+                // {
+                //     field: 'Location', width: '140', headerText: 'Location',
+                //     template: '#coltemplate'
+                // },
+                // {
+                //     field: 'Status', headerText: 'Status',
+                //     width: '150', template: '#statusTemplate'
+                // },
+                // {
+                //     field: 'Trustworthiness', headerText: 'Trustworthiness',
+                //     width: '160', template: '#trustTemplate'
+                // },
+                // {
+                //     field: 'Rating', headerText: 'Rating',
+                //     width: '160', template: '#ratingTemplate'
+                // },
+                // {
+                //     field: 'Software', allowFiltering: false, allowSorting: false, headerText: 'Software Proficiency',
+                //     width: '180', template: '#progessTemplate'
+                // },
+                {
+                    field: 'CurrentSalary', headerText: 'Current Salary', format: 'C2',
+                    // textAlign: 'Right',
+                    width: '150'
+                },
+            ],
+            dataBound: startTimer,
+            actionBegin: function (args) {
             },
-            { field: 'Mail', headerText: 'Mail', width: '150' },
-            // {
-            //     field: 'Location', width: '140', headerText: 'Location',
-            //     template: '#coltemplate'
-            // },
-            // {
-            //     field: 'Status', headerText: 'Status',
-            //     width: '150', template: '#statusTemplate'
-            // },
-            // {
-            //     field: 'Trustworthiness', headerText: 'Trustworthiness',
-            //     width: '160', template: '#trustTemplate'
-            // },
-            // {
-            //     field: 'Rating', headerText: 'Rating',
-            //     width: '160', template: '#ratingTemplate'
-            // },
-            // {
-            //     field: 'Software', allowFiltering: false, allowSorting: false, headerText: 'Software Proficiency',
-            //     width: '180', template: '#progessTemplate'
-            // },
-            {
-                field: 'CurrentSalary', headerText: 'Current Salary', format: 'C2',
-                // textAlign: 'Right',
-                width: '150'
-            },
-        ],
-        dataBound: startTimer,
-        actionBegin: function (args) {
-        },
-    });
-    grid.appendTo('#Grid');
-    grid.on('data-ready', function () {
-        dReady = true;
-    });
-    var listObj = new ej.dropdowns.DropDownList({
-        index: 3,
-        placeholder: 'Select a Data Range',
-        popupHeight: '240px',
-        width: '220px',
-        change: function () { valueChange(); }
-    });
-    listObj.appendTo('#ddl');
-    function valueChange() {
-        listObj.closePopup();
-        dropSlectedIndex = null;
-        var index = listObj.value;
-        clearTimeout(clrIntervalFun2);
-        clrIntervalFun2 = setTimeout(function () {
-            isDataChanged = true;
-            stTime = null;
-            var contentElement = grid.contentModule.getPanel().firstChild;
-            contentElement.scrollLeft = 0;
-            contentElement.scrollTop = 0;
-            grid.pageSettings.currentPage = 1;
-            stTime = performance.now();
-            grid.dataSource = window.getTradeData(index);
-        }, 100);
-    }
-    // document.getElementById('Grid').addEventListener('DOMSubtreeModified', function () {
-    //     if (dReady && stTime && isDataChanged) {
-    //         var msgEle = document.getElementById('msg');
-    //         var val = (performance.now() - stTime).toFixed(0);
-    //         stTime = null;
-    //         dtTime = false;
-    //         dReady = false;
-    //         isDataChanged = false;
-    //         msgEle.innerHTML = 'Load Time: ' + '<b>' + val + '</b>' + '<b>ms</b>';
-    //         msgEle.classList.remove('e-hide');
-    //     }
-    // });
+        });
+        grid.appendTo('#Grid');
+        grid.on('data-ready', function () {
+            dReady = true;
+        });
+        var listObj = new ej.dropdowns.DropDownList({
+            index: 3,
+            placeholder: 'Select a Data Range',
+            popupHeight: '240px',
+            width: '220px',
+            change: function () { valueChange(); }
+        });
+        listObj.appendTo('#ddl');
+        function valueChange() {
+            listObj.closePopup();
+            dropSlectedIndex = null;
+            var index = listObj.value;
+            clearTimeout(clrIntervalFun2);
+            clrIntervalFun2 = setTimeout(function () {
+                isDataChanged = true;
+                stTime = null;
+                var contentElement = grid.contentModule.getPanel().firstChild;
+                contentElement.scrollLeft = 0;
+                contentElement.scrollTop = 0;
+                grid.pageSettings.currentPage = 1;
+                stTime = performance.now();
+                grid.dataSource = window.getTradeData(index);
+            }, 100);
+        }
+        // document.getElementById('Grid').addEventListener('DOMSubtreeModified', function () {
+        //     if (dReady && stTime && isDataChanged) {
+        //         var msgEle = document.getElementById('msg');
+        //         var val = (performance.now() - stTime).toFixed(0);
+        //         stTime = null;
+        //         dtTime = false;
+        //         dReady = false;
+        //         isDataChanged = false;
+        //         msgEle.innerHTML = 'Load Time: ' + '<b>' + val + '</b>' + '<b>ms</b>';
+        //         msgEle.classList.remove('e-hide');
+        //     }
+        // });
+
+        function changesTheme() {
+            var path = 'https://cdn.syncfusion.com/ej2/23.1.44/' + listObj1.text + '.css';
+            // var path1 = './grid-styles/' + listObj.text + '.css';
+            document.querySelector('.theme-primary').href = path.toString();
+            // document.querySelector('.theme-primary1').href = path1.toString();
+        }
+
+        var listObj1 = new ej.dropdowns.DropDownList({
+            placeholder: 'Select a theme',
+            popupHeight: '200px',
+            width: '250px',
+            change: function () { changesTheme(); }
+        });
+        listObj1.appendTo('#theme');
+        var checkBoxObj = new ej.buttons.CheckBox({ label: 'Enable RTL', change: onRtlChange });
+        checkBoxObj.appendTo('#rtlmode');
+
+        var checkBoxObj = new ej.buttons.CheckBox({ label: 'Enable Bigger', change: onBiggerChange });
+        checkBoxObj.appendTo('#biggermode');
+
+        function onRtlChange(e) {
+            grid.enableRtl = e.checked;
+        }
+
+        function onBiggerChange(e) {
+            e.checked ? document.body.classList.add('e-bigger') : document.body.classList.remove('e-bigger');
+        }
     </script>
 </body>
+
 </html>
