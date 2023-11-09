@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox/Excel Filter On Demand Virtual Scroll</title>
+    <script src="../customdata.js"></script>
+    <!-- <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet">
+    <style>
+        /* .e-excelfilter .e-virtual-list {
+            margin-top: 0;
+            overflow-y: hidden;
+        }
+
+        .e-grid .e-checkboxlist.e-virtual-list {
+            margin-top: 0;
+            overflow-y: unset;
+            height: fit-content;
+            min-height: 200px;
+            will-change: transform;
+            z-index: 1;
+        } */
+
+        .e-grid .e-spinner .e-checkboxlist.e-checkbox-infinitescroll {
+            border-top-style: solid;
+            border-top-color: #dee2e6;
+            border-top-width: 1px;
+            overflow-x: hidden;
+            margin-top: 0;
+            /* box-shadow: 1px -2px 2px #dee2e6; */
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+    <script src="./ej2.min.js"></script>
+    <script>
+        function load() {
+            document.body.lastElementChild.remove();
+        }
+    </script>
+</head>
+<body onload="load()">
+    <div>
+        <!-- <div class="div-button">
+            <button id="genarate" class="e-info"> Load 100K Data</button>
+            <span id="popup">
+                <span id="gif" class="image"></span>
+            </span> -->
+            <!-- <span id="performanceTime">Time Taken: 0 ms</span> -->
+        <!-- </div> -->
+        <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
+        <input type="text" id="filterchoice">
+        <h4 style="display: inline-block;">S.No => Custom Data Count: </h4>
+        <input type="text" id="customdata">
+        <h4 style="display: inline-block;">Enable Checkbox filter InfiniteScroll: </h4> -->
+        <!-- virtualization -->
+        <!-- <input type="checkbox" tabindex="1" id='dataloadtype'/>
+        <h4 style="display: inline-block;">Checkbox Loading indicator: </h4>
+        <input type="text" id='loadingeffect'/>
+        <h4 style="display: inline-block;">Filter Type: </h4>
+        <input type="text" tabindex="1" id='filterType' />
+        <h3>Once change filter type, filtered value will be cleared.</h3> -->
+        <!-- or mode of data load -->
+        <div id="Grid">
+        </div>
+    </div>
+    <script>
+    var urlapi = new ej.data.DataManager({
+        url: "http://localhost:62869/api/UrlDataSource",
+        adaptor: new ej.data.UrlAdaptor()
+    });
+    var webApiHostUrl = 'https://services.syncfusion.com/js/production/api/orders';
+    var webApiData = new ej.data.DataManager({
+        url: webApiHostUrl,
+        adaptor: new ej.data.WebApiAdaptor(),
+        crossDomain: true
+    });
+    // var odataV4HostUrl = 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders/';
+    var odataV4HostUrl = 'https://services.odata.org/TripPinRESTierService/(S(oc2olyuwlsip51ht1lh1javk))/People';
+    var odataV4Data = new ej.data.DataManager({
+        url: odataV4HostUrl,
+        adaptor: new ej.data.ODataV4Adaptor(),
+        crossDomain: true
+    });
+    var grid = new ej.grids.Grid({
+        dataSource: odataV4Data,
+        allowSelection: true,
+        allowFiltering: true,
+        enableInfiniteScrolling: true,
+        infiniteScrollSettings: { enableCache: true },
+        // toolbar: [
+        //     'ExcelExport',
+        // ],
+        filterSettings: {
+            type: 'Excel',
+            enableInfiniteScrolling: true,
+            itemsCount: 5
+        },
+        selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
+        height: 450,
+        rowHeight: 38,
+        columns: [
+            { field: 'UserName', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+            { field: 'FirstName', width: 140, headerText: 'Customer ID' },
+            { field: 'LastName', headerText: 'Employee ID', width: 120, textAlign: 'Right' },
+            { field: 'Emails', headerText: 'Order Date', width: 150, textAlign: 'Center' },
+            { field: 'Gender', headerText: 'Ship City', width: 140 },
+        ],
+        actionBegin: function (args) {
+            // if (args.requestType === 'filterbeforeopen' && args.columnName === "EmployeeID") {
+            //     // Assign custom data source to the filter module data source
+            //     args['filterModel'].options.dataSource = window.getTradeData(500);
+            //     // // Remove filtered field except custom data source field
+            //     // args['filterModel'].options.filteredColumns = args['filterModel'].options.filteredColumns.filter( function(col: Column) {
+            //     //     if (col.field == "EmployeeID") {
+            //     //            return true;
+            //     //     }
+            //     //     return false;
+            //     // });
+            // }
+        },
+    });
+    grid.appendTo('#Grid');
+    grid.toolbarClick = function (args) {
+        if (args.item.id === 'Grid_excelexport') {
+            grid.excelExport();
+        }
+    };
+    grid.on('data-ready', function () {
+        dReady = true;
+    });
+    // grid.on('beforeCheckboxfilterRenderer', (args) => {
+    //     // args.element.innerHTML = '';
+    //     // let parentElement: HTMLElement = createElement('div', { className: 'e-checkboxlist e-fields e-checkbox-infinitescroll' });
+    //     for (var i = 0; i < 500; i++) {
+    //         var elem = ej.base.createElement('div', { className: 'e-ftrchk' });
+    //         grid.filterModule.filterModule.excelBase
+    //         var checkBox = grid.filterModule.filterModule.excelFilterBase.createCheckbox(i + '', false, { checked: true, label: ' ' });
+    //         checkBox.insertBefore(ej.base.createElement('input', {
+    //             className: 'e-chk-hidden', attrs: { type: 'checkbox' }
+    //         }), checkBox.firstChild);
+    //         elem.appendChild(checkBox);
+    //         var label = elem.querySelector('.e-label');
+    //         (label).innerText = i + '';
+    //         args.element.appendChild(elem);
+    //     }
+    //     // args.element = parentElement;
+    //     args.isCheckboxFilterTemplate = true;
+    //     grid.off('beforeCheckboxfilterRenderer');
+    // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox/Excel Filter On Demand Virtual Scroll</title>
+    <script src="../customdata.js"></script>
+    <!-- <script src="https://ej2.syncfusion.com/javascript/demos/grid/local-data/datasource.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link href="https://cdn.syncfusion.com/ej2/20.4.48/material.css" rel="stylesheet">
+    <style>
+        /* .e-excelfilter .e-virtual-list {
+            margin-top: 0;
+            overflow-y: hidden;
+        }
+
+        .e-grid .e-checkboxlist.e-virtual-list {
+            margin-top: 0;
+            overflow-y: unset;
+            height: fit-content;
+            min-height: 200px;
+            will-change: transform;
+            z-index: 1;
+        } */
+
+        .e-grid .e-spinner .e-checkboxlist.e-checkbox-infinitescroll {
+            border-top-style: solid;
+            border-top-color: #dee2e6;
+            border-top-width: 1px;
+            overflow-x: hidden;
+            margin-top: 0;
+            /* box-shadow: 1px -2px 2px #dee2e6; */
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+    <script src="./ej2.min.js"></script>
+    <script>
+        function load() {
+            document.body.lastElementChild.remove();
+        }
+    </script>
+</head>
+<body onload="load()">
+    <div>
+        <!-- <div class="div-button">
+            <button id="genarate" class="e-info"> Load 100K Data</button>
+            <span id="popup">
+                <span id="gif" class="image"></span>
+            </span> -->
+            <!-- <span id="performanceTime">Time Taken: 0 ms</span> -->
+        <!-- </div> -->
+        <!-- <h4 style="display: inline-block;">Filter Choice Count: </h4>
+        <input type="text" id="filterchoice">
+        <h4 style="display: inline-block;">S.No => Custom Data Count: </h4>
+        <input type="text" id="customdata">
+        <h4 style="display: inline-block;">Enable Checkbox filter InfiniteScroll: </h4> -->
+        <!-- virtualization -->
+        <!-- <input type="checkbox" tabindex="1" id='dataloadtype'/>
+        <h4 style="display: inline-block;">Checkbox Loading indicator: </h4>
+        <input type="text" id='loadingeffect'/>
+        <h4 style="display: inline-block;">Filter Type: </h4>
+        <input type="text" tabindex="1" id='filterType' />
+        <h3>Once change filter type, filtered value will be cleared.</h3> -->
+        <!-- or mode of data load -->
+        <div id="Grid">
+        </div>
+    </div>
+    <script>
+        var localData = window.data;
+        var grid = new ej.grids.Grid({
+        dataSource: localData,
+        allowPaging: true,
+        // allowSorting: true,
+        allowFiltering: true,
+        filterSettings: {
+            type: 'Excel',
+            enableInfiniteScrolling: true,
+            itemsCount: 10
+        },
+        // allowGrouping: true,
+        // toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search'],
+        // editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true },
+        columns: [
+            {
+                field: 'OrderID', width: 120, headerText: 'Order ID', isPrimaryKey: true, textAlign: 'Right',
+                validationRules: { required: true, number: true }
+            },
+            {
+                field: 'CustomerID', foreignKeyField: 'CustomerID', foreignKeyValue: 'ContactName', dataSource: window.customerData,
+                width: 150, headerText: 'Customer Name'
+            },
+            {
+                field: 'Freight', textAlign: 'Right', width: 100, editType: 'numericedit', format: 'C2'
+            },
+            { field: 'ShipName', headerText: 'Ship Name', width: 170 },
+            { field: 'ShipCountry', headerText: 'Ship Country', editType: 'dropdownedit', width: 150 }
+        ]
+    });
+    grid.appendTo('#Grid');
+    </script>
+</body>
+</html>
