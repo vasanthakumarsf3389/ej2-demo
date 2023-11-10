@@ -309,16 +309,8 @@
 </head>
 
 <body onload="load()">
-    <div style="display: flex;">
-        <div>
-            <div style="padding: 10px; display: inline-block;">
-                <input id="rtlmode" type="checkbox" />
-            </div>
-            <div style="padding: 10px; display: inline-block;">
-                <input id="biggermode" type="checkbox" />
-            </div>
-        </div>
-        <div id="default">
+    <div>
+        <div id="default" style="float: right;">
             <h3 style="display: inline-block;">Themes: </h3>
             <select id="theme">
                 <option value="material">material</option>
@@ -336,6 +328,14 @@
                 <option value="tailwind">tailwind</option>
                 <option value="highcontrast">highcontrast</option>
             </select>
+        </div>
+        <div>
+            <div style="padding: 10px; display: inline-block;">
+                <input id="rtlmode" type="checkbox" />
+            </div>
+            <div style="padding: 10px; display: inline-block;">
+                <input id="biggermode" type="checkbox" />
+            </div>
         </div>
     </div>
     <!-- <div class="div-button">
