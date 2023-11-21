@@ -30892,6 +30892,10 @@ body.e-colorpicker-overflow {
   overflow: auto;
   overflow-x: hidden;
 }
+/* .e-filter-popup.e-control.e-dialog.e-popup.e-popup-open.e-excelfilter .e-dlg-content,
+.e-filter-popup.e-control.e-dialog.e-popup.e-popup-open.e-checkboxfilter .e-dlg-content {
+  line-height: 1;
+} */
 .e-dialog .e-dlg-content.e-hide {
   display: none;
 }
