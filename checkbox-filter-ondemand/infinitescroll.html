@@ -560,7 +560,13 @@
             clearInterval(intervalFun);
             dtTime = true;
         }
+        var urlapi = new ej.data.DataManager({
+            url: 'https://ej2services.syncfusion.com/js/development/api/UrlDataSource',
+            adaptor: new ej.data.UrlAdaptor()
+        });
         var grid = new ej.grids.Grid({
+            // dataSource: urlapi,
+            // query: new ej.data.Query().addParams('dataCount', '301'),
             dataSource: window.getTradeData(100000),
             allowFiltering: true,
             enableInfiniteScrolling: true,
@@ -570,7 +576,7 @@
                 // type: 'CheckBox',
                 type: 'Excel',
                 enableInfiniteScrolling: true,
-                // itemsCount: 300
+                itemsCount: 500
             },
             selectionSettings: { persistSelection: true, type: 'Multiple', checkboxOnly: true },
             // enableHover: false,
@@ -645,6 +651,18 @@
                 contentElement.scrollTop = 0;
                 grid.pageSettings.currentPage = 1;
                 stTime = performance.now();
+                // if (grid.query.params.length > 1) {
+                //     for (var i = 0; i < grid.query.params.length; i++) {
+                //         if (grid.query.params[i].key === 'dataCount') {
+                //             grid.query.params[i].value = index.toString();
+                //             break;
+                //         }
+                //     }
+                // }
+                // else {
+                //     grid.query.params[0].value = index.toString();
+                // }
+                // grid.setProperties({ dataSource: urlapi });
                 grid.dataSource = window.getTradeData(index);
             }, 100);
         }

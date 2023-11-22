@@ -53026,9 +53026,10 @@ li.e-separator.e-menu-item.e-excel-separator {
   overflow-y: auto;
 }
 .e-grid .e-checkboxlist.e-checkbox-infinitescroll {
-  border-top-style: solid;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  /* border-top-style: solid;
   border-top-color: rgba(0, 0, 0, 0.12);
-  border-top-width: 1px;
+  border-top-width: 1px; */
   margin-top: 0;
   overflow-x: hidden;
 }

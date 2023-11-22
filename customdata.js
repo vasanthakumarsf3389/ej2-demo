@@ -22,6 +22,9 @@ window.getTradeData = function(dataCount) {
         "Av. Copacabana, 267", "Strada Provinciale 124", "Fauntleroy Circus", "Av. dos LusÃ­adas, 23",
         "Rua da Panificadora, 12", "Av. InÃªs de Castro, 414", "Avda. Azteca 123", "2817 Milton Dr."];
     var EmployeeImg = ['usermale', 'userfemale'];
+    var month = [7, 12, 4, 9, 2, 11, 3, 5, 10, 1, 8, 6];
+    var day = [21, 15, 1, 10, 17, 30, 25, 16, 2, 9, 22, 19, 26, 5, 28, 12, 3, 20, 18, 4, 23, 14, 6, 24, 11, 8, 27, 13, 7, 29];
+    var year = [2021, 2008, 2017, 2022, 2000, 2014, 2020, 2004, 2012, 2023, 2001, 2016, 2019, 2009, 2011, 2003, 2018, 2005, 2013, 2010, 2015, 2007, 2002];
     if (typeof dataCount === 'string') {
         dataCount = parseInt(dataCount);
     }
@@ -40,6 +43,8 @@ window.getTradeData = function(dataCount) {
             'EmployeeImg': EmployeeImg[Math.floor(Math.random() * EmployeeImg.length)],
             'CurrentSalary': Math.floor((Math.random() * 100000)),
             'Address': Address[Math.floor(Math.random() * Address.length)],
+            'JoinedDate': new Date(year[Math.floor(Math.random() * year.length)], month[Math.floor(Math.random() * month.length)],
+            day[Math.floor(Math.random() * day.length)])
         });
         var emp = tradeData[i - 1].Employees;
         var sName = emp.substr(0, emp.indexOf(' ')).toLowerCase();
